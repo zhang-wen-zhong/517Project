@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 200px;
+            height: 300px;
+            outline: 2px solid red;
+            margin: 40px;
+            perspective: 400px;
+            /* 物件翻轉才有效果 */
+        }
+        .flip {
+            transform: rotateY(0deg);
+            position: relative;
+            transform-style: preserve-3d;
+            /* 可以用3D方式呈現 */
+            transition: 3.6s;
+        }
+        .card:hover .flip{
+            transform: rotateY(-180deg);
+            /* -180度左手當Y主軸,主軸向下,所以-180度是從右往左翻 */
+        }
+        .front{
+            width: 100%;
+            height: 100%;
+            background-color: orange;
+            font-size: 100px;
+            line-height: 300px;
+            text-align: center;
+            transform: rotateY(0deg);
+            backface-visibility: hidden;
+        }
+        .back{
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            font-size: 100px;
+            line-height: 300px;
+            text-align: center;
+            transform: rotateY( 180deg );
+            backface-visibility: hidden;
+            /* 翻到背面會消失 */
+            position: absolute;
+            top: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="card">
+        <div class="flip">
+            <div class="front">A</div>
+            <div class="back">B</div>
+        </div>
+    </div>
+</body>
+</html>

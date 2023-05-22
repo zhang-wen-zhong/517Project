@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: pink;
+        }
+        .problem{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>continue 印出3的倍數</h2>
+    <script>
+        var total = 0;
+        // 如果 i除3的餘數 不等於 0 則繼續跑上面的迴式,若等於0再往下跑迴式 3%3=0 (0不等於0)是錯的條件>不觸發continue>將i=3輸出....
+        for(var i=1; i<=50; i++){
+            if(i%3!==0){
+                continue; //繼續下一個迴圈 從開頭條件重跑//符合上述條件的不繼續往下跑,繼續迴圈
+            }
+            document.write(i, "<br>")
+            total = total + i;
+        }
+        document.write("總和:", total, "<br>")
+    </script>
+
+<h2>break : 1加到多少會大於1000</h2>
+<script>
+    var total=0;
+    
+    for(var i=1; i<=1000; i++){
+        if(total>1000){
+            document.write(`1加到${i}的值為${total}會大於1000`);
+            break;//如果沒符合上述條件,則迴圈持續跑,若一旦達成,立即結束迴圈
+        }
+        total = total+i;
+    }
+</script>
+
+<h2>練習印出表格</h2>
+<script>
+    document.write( "<table border='1' cellspacing='0'>");
+    for(let i=-2; i<=10; i++){
+        document.write( `<tr><td>${i}</td></tr>`);
+    }
+    document.write( "</table>");
+</script>
+
+<h2>練習印出表格-2</h2>
+<script>
+    document.write( "<table border='1' cellspacing='0'>");
+    for(let i=1; i<=10; i+=2){
+        document.write( `<tr><td>${i}</td><td>${i+1}</td></tr>`); 
+    }
+    document.write( "</table>");
+</script>
+
+<h2>666</h2>
+<script>
+    var sum = 0;
+    for(var i =1; i<10; i++){
+        document.write( i,"<br>");
+        sum += i;
+    }
+    document.write( i,"<br>");
+    document.write( sum,"<br>");
+</script>
+
+<h2>練習1:印出1.2.3....10</h2>
+<script>
+var i =1;
+while(i<=9){
+    document.write( i,".");
+    i++;
+}
+document.write( i, "<br>");
+</script>
+<h2>練習1:印出1加到10總和</h2>
+<script>
+    var i =1;
+    var sum=0; //有些先後順序會影響結果
+    while(i<=10){
+        sum +=i;    //sum = sum+i
+        i++;
+}
+document.write( "總和:", sum, "<br>");
+</script>
+<h2>myself</h2>
+<script>
+    var sum =0;
+    for(var i=1; i<11; i++){
+        sum += i;
+    }
+    document.write( sum, "<br>" );
+</script>
+<h2>練習3:印出1~50間3倍數及總和</h2>
+<script>
+    var i = 3;
+    var sum = 0;
+    while(i<50){
+        document.write( i,"<br>");
+        i+=3;
+        sum += i;
+    }
+    document.write( "total:", sum,"<br>");
+</script>
+
+<h2>多重迴圈 </h2>
+<script> //var執行一次,let執行裡面的內容
+for(var i=1; i<=4; i++){ //i:1
+	// document.write( "1 2 3 4 5 6 7 8 9", "<br>");
+    //&nbsp代表一個空白格
+    //&copy;
+    for(let j=1; j<=10; j++){ //let適合用在區塊範圍變數宣告
+        document.write( j, "&copy;&nbsp;&nbsp;&nbsp")
+    }
+    document.write( "<br>");
+}
+</script> 
+
+<h2>9X9 </h2>
+<script> //var執行一次,let執行裡面的內容
+for(var i=1; i<=9; i++){ //i:1
+    for(let k=1; k<=9; k++){
+        document.write( i*k, "&copy;&nbsp;&nbsp;&nbsp")
+    }
+    document.write( "<br>");
+}
+</script> 
+
+<h2>9X9--1</h2>
+<script> 
+document.write( "<table border='1' cellspacing='0'>");
+for(var i =1; i<=9; i++){
+    //印一列
+    document.write( "<tr>"); //印一列的起始標籤
+        for(let j =1; j<=9; j++){
+            document.write( "<td>", i*j, "</td>");   
+        }
+        document.write( "</tr>");
+}
+document.write( "</table>");
+</script> 
+
+<h2>9X9--2</h2>
+<script> 
+document.write( "<table border='1' cellspacing='0'>");
+for(var i =1; i<=9; i++){//印一列
+    document.write( "<tr>"); //印一列的起始標籤
+    for(let j =1; j<=9; j++){//document.write( "<td>", i, "*", j, "=", i*j, "</td>");  //將要硬的資料芳入td中 
+            //------改用template來寫
+        document.write(`<td>${i}*${j}=${i*j}</td>`);    
+    }
+    document.write( "</tr>");//印一列的結束標籤
+}
+document.write( "</table>");
+</script> 
+
+<h2>Math物件</h2>
+<script>
+document.write( "Math.PI : ",Math.PI, "<br>"); //	
+document.write( "Math.round(3.6) : ", Math.round(3.6), "<br>"); //	
+document.write( "Math.sqrt(9) : ", Math.sqrt(9),"<br>");
+document.write( "Math.random(3.6) : ", Math.random(), "<br>");
+document.write( "Math.floor(Math.random()*11): ", Math.floor(Math.random()*11),"<br>");//產生0~6之間的整數
+
+//document.write( "Math.random()*6 : ", Math.random()*6,"<br>");//產生0~5.9999
+document.write( "Math.ceil(12/10) : ", Math.ceil(12/10),"<br>");//	
+document.write( "Math.ceil(24/6) : ", Math.ceil(24/6),"<br>");
+</script>
+
+<h2>建立陣列</h2>
+<script>
+//建立
+var arr =new Array(11,22,33);
+// var arr =[11, 22, 33]; //陣列的字面值表示法
+//使用陣列變數 [索引]來取得陣列中的資料
+for(let i=0; i<=3; i++){
+    document.write("arr[i]:", arr[i], "<br>" );
+}
+</script>
+
+<h2>建立陣列----改寫</h2>
+<script>
+var arr =new Array(11,22,33,44,55, 66, 444,);//取arr的長度
+for(let i=0; i<arr.length; i++){//可用的資料之屬引值長度少1,每次要重跑
+    document.write("arr[i]:", arr[i], "<br>" );
+}
+</script>
+
+<h2>建立陣列----改寫2</h2>
+<script>
+var arr =new Array(11,22,33,44,55);
+var length = arr.length;//取arr的長度
+for(let i=0; i<arr.length; i++){
+}
+document.write("arr[1]:", arr[1], "<br>" );
+document.write("arr[4]:", arr[4], "<br>" );
+document.write("arr的陣列個數:", arr.length, "<br>" );
+</script>
+
+<h2>陣列在JavaScript中可以動態的配置</h2>
+<script>
+var arr =new Array(11,22,33,44,55); //長度為5
+arr[7]=100; //長度為8
+
+var length = arr.length;
+for(let i=0; i<arr.length; i++){
+    document.write("arr[i]", arr[i], "<br>" );
+}
+</script>
+
+<h2>for(i in arr)</h2>
+<script>
+var arr =new Array(11,22,33);
+arr[6] = 100;
+for (let i in arr){ //i:取到的是索引值 foreach物件中的每一個資料
+    document.write("arr[i]:", arr[i], "<br>" );
+}
+</script>
+
+<h2>for(data of arr) 沒資料的也會印出來</h2> 
+<script>
+var arr =new Array(11,22,33);
+arr[6] = 100;
+for (let data of arr){ 
+    document.write("data:", data, "<br>" );
+}
+</script>
+
+<h2>其內的資料可以是不同的型別</h2>
+<script>
+var arr = new Array(1,"2","LOVE");
+for(var i = 0; i < arr.length; i++){ 
+	document.write( "arr[i] : ", arr[i], "<br>"); 
+}
+</script>
+
+<h2>將陣列中的資料串接成字串------自己做</h2>
+<script>
+var arr = new Array(11, 22, 323);
+var str = "";
+for(var i=0; i < arr.length-1; i++){
+    str += arr[i] + ",";
+}
+str += arr[i];
+//印出字串
+document.write( str, "<br>");
+</script>
+
+
+<h2>將陣列中的資料串接成字串------使用陣列的toString()</h2>
+<script>
+ var arr = new Array(11, 22, 33);
+ var str = arr.toString();
+ document.write( str, "<br>");
+</script>
+
+<h2 >將陣列中的資料串接成字串------使用自動呼叫的toString()</h2>
+<script>
+var arr = new Array(11, 22, 33, 44);//像是資料庫
+document.write( arr.toString(),"<br>");//arr.toString() //自動把所有內容印出來//把資料庫合起來一次印出
+</script>
+
+<h2>將新的資料放到陣列的最後面------自己做</h2>
+<script>
+var arr = new Array(11, 22, 33 );//100
+arr[3]=100; //放在第3個位置,前面有第0.1.2個 []裡面是索引直,
+
+for(var i=0; i<arr.length; i++){
+	document.write( arr[i], "<br>");
+}
+</script>
+
+<h2>將新的資料放到陣列的最後面------自己做2</h2>
+<script>
+var arr = new Array(11, 22, 33, 44);
+
+arr[arr.length]=100; 
+arr[arr.length]=200; //直接加在長度最後面
+
+for(var i=0; i<arr.length; i++){
+	document.write( arr[i], "<br>");
+}
+</script>
+
+<h2>將新的資料放到陣列的最後面------使用陣列的push(data)</h2>
+<script>
+var arr = [11,22,33];
+// var arr = new Array(11, 22, 33);
+arr.push(100);
+arr.push(120);
+
+document.write( arr,"<br>");
+</script>
+
+
+<h2>將新的資料(100)insert到陣列中的特定位置(3)------自己做</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+
+for(let i = arr.length-1; i>=3; i--){ //arr.lengh為最後一個數(有7個數字),-1是長度-1(才能扣到第6個數字,因為有第0個數字) //6, 5, 4, 從後面往前座
+    arr[i+1] = arr[i]; //把前一個數的值給下一個
+}
+arr[3]=100;
+document.write( arr, "<br>");
+</script>
+
+<h2>312將陣列中的資料串接成字串------arr.join([separator])</h2>
+<script>
+//如果未傳入此separator參數，陣列中的元素將預設用英文逗號（「,」）隔開
+//回傳一個合併所有陣列元素的字串。//若arr.length 為 0，將回傳空字串。
+var arr = new Array(11, 22, 33);
+var str = "";
+
+str = arr.join("@@");
+document.write( str, "<br>");
+</script>
+
+
+<h2>cancat(value1[, value2[, ...[, valueN]]])</h2>
+<script>
+//用來合併成一個新的陣列。//回傳一個新的陣列實體。
+var arr = new Array(11, 22, 33);
+var arr2 = new Array(55, 66, 77);
+
+var arr3 = arr.concat(arr2);
+//串接arr和arr2,變成arr3的新陣列,不影響前面的陣列 
+document.write( arr, "<br>");
+document.write( arr2, "<br>");
+document.write( arr3, "<br>");
+</script>
+
+<h2>pop():移除並回傳陣列的最後一個元素。此方法會改變陣列的長度。</h2>
+<script>
+//回傳值為自陣列中移除的元素；若陣列為空，則為 undefined。
+var arr = new Array(11, 22, 33);
+
+var data = arr.pop();//把元素移出來
+ 
+document.write( "pop移出:", data,  "<br>");
+document.write( arr, "<br>");
+</script>
+
+<h2>unshift(data):添加一個或多個元素至陣列的開頭，並且回傳陣列的新長度。</h2>
+<script>
+//會改變原陣列的內容//回傳值:呼叫此方法之物件的新 length 屬性值。
+var arr = new Array(11, 22, 33);
+
+arr.unshift(1000);//1000, 11, 22, 33
+arr.unshift(1000);//1000, 1000, 11, 22, 33
+// var length = arr.unshift(); //陣列長度
+document.write( arr, "<br>");//陣列內容
+</script>
+
+
+<h2>slice(start, end)</h2>
+<script>
+//會回傳一個新陣列物件，為原陣列選擇之 start 至 end的前一個資料（不含 end）部分的淺拷貝（shallow copy）
+//原本的陣列不會被修改。
+//回傳值為被拷貝之元素的新陣列。
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+//拷貝陣列中的資料
+var arr2 = arr.slice(2, 5); //33, 44, 55
+// copy第2個值到第5個值間的內容(第5個值不copy)
+document.write( "原陣列:", arr, "<br>");
+document.write( "複製的陣列", arr2, "<br>");
+</script>
+
+<h2>splice(start, n, data1, data2,....)</h2>
+<script>
+//可以藉由刪除既有元素(start開始刪除掉n個)
+//或加入新元素(data1, data2, ...)來改變一個陣列的內容。
+//回傳值是一個包含被刪除的元素陣列。如果只有一個元素被刪除，依舊是回傳包含一個元素的陣列。 倘若沒有元素被刪除，則會回傳空陣列。
+
+var arr = new Array(11, 22, 33, 44, 55, 66, 77, 88, 99);
+//取出資料(從索引值2開始取出5個)
+var arr2 = arr.splice(2, 5);//33, 44, 55, 66, 77
+
+document.write( arr, "<br>"); //11,22,88,99
+document.write( arr2, "<br>");
+</script>
+
+
+<h2>splice(start, n, data1, data2,....)-----2</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77, 88, 99);
+//取出資料(從索引值2開始取出5個), 從取出資料的地方加入新的資料(100,200,300)
+var arr2 = arr.splice(2,5, 100, 200);
+document.write( arr, "<br>");
+document.write( arr2, "<br>");
+</script>
+
+<h2>將資料(100)insert到陣列中的特定位置(3)------可以使用splice()來模擬</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+var arr2 = arr.splice(3, 0, 100); //從第三個位置加入,不減掉東西,回傳空陣列,再加上值100
+document.write( "arr:", arr, "<br>");
+document.write("arr2:", arr2, "<br>");//回傳的是空陣列
+document.write("arr2.length:", arr2.length, "<br>"); //回傳的空陣列,如果沒東西回會顯示不出來 
+</script>
+
+<h2 class="problem">!!!!!將特定位置(3)的資料自陣列中移除------可以使用splice()</h2>
+<script>
+var arr = new Array(11, 22, 33, 44, 55, 66, 77);
+var arr2 = arr.splice(3, 1); //data : [33]後面的第一個值
+document.write( arr, "<br>"); 
+document.write( arr2[0], "<br>");//arr2陣列的第0個位置的值 ,現在arr2裡面也只有一個值,所以目前arr2=arr2[0]
+</script>
+
+<h2>reverse()</h2>
+<script>
+// 反轉一個陣列// 會影響陣列。
+var arr = new Array(11, 22, 33);
+document.write( arr, "<br>");  //反轉前
+arr.reverse();
+document.write( arr, "<br>");  //反轉後
+</script>
+
+
+<h2>indexOf(searchElement[, fromIndex])</h2>
+<script>
+//回傳searchElement於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1。
+//fromIndex指陣列中搜尋的起始索引。
+
+var arr = new Array(11, 22, 33, 44, 55, 22, 77, 88, 33, 66);
+
+document.write( "arr.indexOf(33) :", arr.indexOf(33),  "<br>"); //從起始頭開始找33在第幾個值
+document.write( "arr.indexOf(11) :", arr.indexOf(11),  "<br>"); //從起始頭開始找0在第幾個值
+document.write( "arr.indexOf(333) :", arr.indexOf(333), "<br>"); //若找不到值,回傳-1
+document.write( "arr.indexOf(33, 5) :", arr.indexOf(33, 5), "<br>"); //找33的值,從第5個索引值開始找
+</script>
+
+<h2>陣列物件參考的操作</h2>
+<script>
+var arr = new Array(11, 22, 33);
+var arr2 = arr;
+
+document.write( arr, "<br>");//原陣列的內容
+arr2[0] = 300; //改變arr2陣列的內容
+document.write( arr, "<br>");//原陣列的內容	
+arr.reverse();
+document.write( arr, "<br>");//原陣列的內容	
+</script>
+
+<h2>陣列的字面值表示法</h2>
+<script>
+// var arr = new Array(11, 22, 33);
+var arr = [11, 22, 33]; //跟上面的陣列相同
+arr.push(100, 300);
+document.write( arr, "<br>");	
+</script>
+
+<h2>sort</h2>
+<script>
+var arr = [40, 20, 50, 70, 30, 80, 7];//先變成字串"40", "20", "50", "70", "30", "80", "7"
+document.write("排序前", arr, "<br>");
+arr.sort();
+document.write("排序後", arr, "<br>");//先比第一個數字"20", "40", "50", "7", "70", "80", //2<4<7<8//第一位相同比第二位數字
+arr.reverse();
+document.write("反轉後", arr, "<br>");
+</script>
+
+
+<h2>建立2維陣列</h2>
+<script>
+// var arr = new Array( new Array( 1, 2, 3, 4), new Array( 11, 12, 13, 14), new Array( 21, 22, 33, 44)); //下面是用字面表示
+var arr = [[1, 2, 33, 4], [11, 12, 13, 14], [21, 22, 33, 44]];
+    for(var i=0; i<arr.length; i++){
+	document.write( arr[i], "<br>"); //arr[0] , arr[1] , arr[2]
+}
+// console.log(arr);
+</script>
+
+
+<h2>將2維陣列輸出到table中</h2>
+<script>
+var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 33, 44]];
+
+var html = "<table border = '1' cellspacing ='0'>";
+    for(let i=0; i<3; i++){
+        html +="<tr>" ;
+        for(let j=0; j<4; j++){
+                html +="<td>" +arr[i][j] + "</td>";
+            }
+        html +="</tr>";
+        }
+    html += "</table>"; //html = html + "</table>";
+
+    document.write( html, "<br>");
+</script>
+
+<h2>將2維陣列輸出到table中----2(各列增加一欄存放各列的總數)</h2>
+<script>
+var arr = [[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24]];
+var html = "<table border = '1' cellspacing ='0'>";//將所要輸出的網頁結構串接到html中
+    for(let i=0; i<3; i++){
+        var sum = 0; //計算該列總計時,必須設定初值為0
+        html += "<tr>";
+            for(let j=0; j<4; j++){
+                html += "<td>" +arr[i][j] + "</td>";
+                sum += arr[i][j];
+            }
+            html += `<td>${sum}</td>`;
+            html +="</tr>";
+    }
+    html += "</table>"; //html = html + "</table>";
+
+    document.write( html, "<br>");
+</script>
+
+<h2 >將2維陣列輸出到table中----3(動態增加一欄存放各列的總數)</h2>
+<script>
+var arr = [[1, 2, 3], [4, 5, 6], [11, 12, 13, 14], [21, 22, 23, 24]];
+
+var html = "<table border='1' cellspacing='0'>";
+
+    for(let i=0; i<arr.length; i++){
+        var sum = 0; //計算該列總計時,必須設定初值為0
+        html += "<tr>";
+            for(let j=0; j<arr[i]length; j++){
+                html += "<td>" +arr[i][j] + "</td>";
+                sum += arr[i][j];
+            }
+            html += `<td>${sum}</td>`;
+            html += "</tr>";
+    }
+    html += "</table>"; //html = html + "</table>";
+    document.write( html, "<br>");
+</script>
+
+<h2>eval()</h2>
+<script>
+var str = "var a=10; var b=20";
+
+eval(str);
+document.write( "a : ", a, "<br>");
+</script>
+
+<h2>isNaN() =is not a number</h2> 
+<script>
+//輸入框裡面的都是字串
+document.write( "isNaN('32000') : ", isNaN('32000'), "<br>"); //false
+document.write( "isNaN('*#@') : ", isNaN('*#@'), "<br>"); //true
+</script>
+
+<h2>没有參數也没有傳回值</h2>
+<script>
+function sayHello(){
+    document.write( "hello~", "<br>");
+    return;
+}
+sayHello();
+</script>
+
+<h2>有參數也没有傳回值</h2>
+<script>
+function sayHelloToSomeone(name){
+    document.write( name, ",good", "<br>");
+}
+sayHelloToSomeone("ad");
+</script>
+
+<h2>有參數, 有傳回值</h2>
+<script>
+function sum(a, b){//a和b是參數(區域變數) 參數:參考的數(parameter)
+    let total = 0;
+    total = a + b;
+    return total;
+}
+document.write("10+20=", sum(10,20), "<br>")
+// document.write("10+20=", a, "<br>")//區塊的元素不影響外面的,區域變數在外面沒有定義
+</script>
+
+<h2>arguments</h2>
+<script>
+function sum(a, b){  
+	var total = 0;  
+	total = a + b;
+	return total;
+}	
+function sum(a, b, c){
+    //函式中有arguments可用,[10,20,30],arguments[0]=10,
+    //arguments.length:長度
+    //函式中的參數沒用到沒關係
+    var total = 0;
+    for(let i=0; i<arguments.length; i++){
+        total += arguments[i];
+    }
+    return total;
+}
+document.write("10 + 20 =", sum( 10, 20), "<br>"); 
+document.write("10 + 20 + 30 =", sum( 10, 20, 30), "<br>");
+document.write("10 + 20 + 30  + 40 =", sum( 10, 20, 30, 40), "<br>");
+</script>
+
+<h2>short circuit</h2> 
+<script>
+    //短路評估,快捷評估 /如果前面已知道答案,後面就不用做
+    var a = 10>5 || 10<0;//true
+    var b = 10<0 || 10>15;//false
+        
+    var c = 10>5 && 10<0;//false
+    var d = 10<0 && 10>15;//false
+
+    var e = 10 ||6; //e = 10
+    var f = 10 ||0; //f = 10
+
+    var g = 10 && 6;//10是true,後面也是true所以是6
+    var h = 0 && 6;//0是false,前面錯,所以=0
+
+    document.write("a:", a, "<br>")
+    document.write("b:", b, "<br>")
+    document.write("c:", c, "<br>")
+    document.write("d:", d, "<br>")
+    document.write("e:", e, "<br>")
+    document.write("f:", f, "<br>")
+    document.write("g:", g, "<br>")
+</script>
+
+<h2 class="problem">參數給預設值</h2>
+<script>
+    function showMsg(message="大家好"){
+        // message = message === undefined ? "hi..." : message;
+        message = message || "hi~";  //message:Hi~~~
+    	document.write( message, "<br>");
+    }
+    showMsg("禱告~");
+    showMsg();
+    showMsg(0);//0是false,所以會出現hi
+    showMsg("0");
+    showMsg("");
+
+</script>
+
+<h2>避免和全域方法同名</h2>
+<!-- <script>
+
+function alter( )
+window.alert("test...........1"); //window定義的
+alert("test...........2");		
+</script> -->
+ 
+
+
+</body>
+</html>

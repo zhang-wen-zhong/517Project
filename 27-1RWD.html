@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 30%;
+            height: 0;
+            padding-top: 30%;
+            background-color: #f00;
+        }
+        @media screen and (min-width: 768px ){
+            .box {
+                background-color: blueviolet;
+            }
+        }
+        @media screen and (min-width: 1024px ){
+            .box {
+                background-color: rgb(78, 176, 71);
+            }
+        }
+        @media screen and (min-width: 1200px ){
+            .box {
+                background-color: rgb(230, 20, 93);
+            }
+        }
+        
+
+        .mv{
+            width: 50%;
+            position: relative;
+        }
+        /* .frame{
+            width: 100%;
+            padding-bottom: 56.25%;
+            background-color: #f00;
+            
+        } */
+        iframe{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .mv::after{
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <div class="mv">
+    <!-- <div class="frame"></div> -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hWJTa8yNWY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

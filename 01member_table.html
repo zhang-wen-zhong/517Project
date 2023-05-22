@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 書寫方向由右至左direction="right to light"  dir="rtl" -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .amos{
+            width: 600px;
+            height: 600px;
+            background-color: #fa0;
+            display: flex;
+            flex-direction:row;
+            /* 控制主軸方向 */
+            justify-content: ;
+            /* 控制子物件在主軸方向上的對齊與分布 */
+            flex-wrap:wrap;
+            /* 控制交叉軸方向/控制換列 */
+            align-content:flex-start ;
+            /* 控制彈性列在父層空間中交叉軸的對齊與分布 */
+            align-items: ;
+
+
+        }
+        .item{
+            width: 160px;
+            height: 100px;
+            margin: 4px;
+            font-size: 32px;
+            background-color: #00f;
+        }
+        .new_pic a {
+            text-decoration: none;
+        }
+        .new>p {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>title</h1>
+    <form action="">
+        <label for="username">帳號:</label>
+        <input type="text" id="username">
+        <br>
+        <label>
+            密碼:
+            <input type="text" readonly value="kobe">
+        </label>
+    </form>
+    <div>
+        <label>
+            信箱
+            <input type="email" required>
+        </label>
+    </div>
+    <div>
+        <label>
+            日期
+            <input type="date" disabled>
+        </label>
+    </div>
+    <div>
+        <label>
+            星期
+            <input type="week">
+        </label>
+    </div>
+    <div>
+        <label>性別</label>
+        男
+            
+            <input type="email">
+        
+    </div>
+    <div>
+        <label>
+            信箱
+            <input type="email">
+        </label>
+    </div>
+    <div>
+        <input type="submit">
+        
+    </div>
+    
+    <table border="3" width="300">
+        <caption>成績單</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>國文</th>
+                <th>英文</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <th>曉華</th>
+                    <td>bb</td>
+                    <td>cc</td>
+                </tr>
+                <tr>
+                    <th>小名</th>
+                    <td>aa</td>
+                    <td>aa</td>
+                </tr>
+            </tbody>
+        </thead>
+        <tfoot>
+            <tr>
+                <th rowspan="2">備註</th>
+                <td>rr</td>
+                <td>rr</td>
+            </tr>
+            <tr>
+                <!-- <th>備註</th> -->
+                <td>rr</td>
+                <td>rr</td>
+            </tr>            
+            <tr>
+                <th>備註</th>
+                <td colspan="2">rr</td>
+                <!-- <td>rr</td> -->
+            </tr>
+            <tr>
+                <th>備註</th>
+                <td>rr</td>
+                <td>rr</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="amos">
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+
+    </div>
+    
+
+    <div class="new">
+        <a href="#"><div class="new_pic">
+            <img src="https://fakeimg.pl/300x200/200">
+        </div>
+        <h1>ttt</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quis fuga sequi minima nostrum. Culpa dignissimos, dolores magni facilis totam quas ratione architecto accusamus tenetur, vero tempora esse cumque consequatur?</p></a>
+    </div>
+</body>
+</html>

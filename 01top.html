@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        
+        
+        *{
+            font-family: 'Alegreya Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+        .logobar{
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            width: calc(100vw - 138px);
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px 40px;
+            /* border: 3px solid blue; */
+            z-index: 2;
+            text-align: center;
+        }
+        .logobar_item_wire{
+            width: 400px;
+            height: 1px;      /*  中間的那條線 */
+            display: inline-block;
+            background-clip: content-box;
+            border-top: 3.5px solid #000;
+            border-bottom: 3.5px solid #000;
+            background-color: #000;
+            padding: 3px 0;
+            margin: 43px 25px ;
+            vertical-align: bottom;
+        }
+        .logobar img{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: bottom;           
+        } 
+        .horizontal {
+            /* border: 3px solid blue; */
+            width: 120px;
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            background-color: white;
+        }
+        .horizontal_nav {
+            width: 118px;
+            height: 100vh;            
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+        .horizontal_nav_pic{
+            text-align: center;          
+        }
+        .horizontal .horizontal_nav_item img{
+            width: 15px;
+        }
+        .horizontal .horizontal_nav_item {
+            height: 980px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;            
+        }
+        .horizontal .horizontal_nav_item a{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            transform: rotate(-90deg);
+        }
+        .banner {
+        display: inline-block;
+        padding: 200px 0 0;    
+        }
+        .banner_img {
+        width: calc(100vw - 138px);
+        height: 130px;
+        background-image:url("theoneoff-material/top/banner1.png");
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: auto 190px;
+        }
+        .banner_img:hover {
+        background-image: url("theoneoff-material/top/banner2.png");
+        }
+        .text {
+            /* border: 2px solid blue; */
+            padding: 20px 0 150px;
+        } 
+        .text .text_design {
+            display: inline-block;
+            width: calc((100vw - 120px)/3);
+            text-align: end;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .text .text_design a {
+            font-size: 48px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bolder;
+            
+        }
+        .text_content {
+            display: inline-block;
+            width: calc((100vw - 120px)/3);
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px 40px;
+            font-weight: 900;
+        }
+        .text .text_btn {
+            display: inline-block;
+            width: calc((100vw - 120px)/3);
+            position: relative;
+        }
+        .text_btn_reserve{
+            padding: 20px;
+            border-radius: 20px;
+            position: absolute;
+            bottom: -35px;
+            left: 30px;
+            border: none;
+            background-color: #ccc; 
+        }
+        .text_btn_reserve:hover {
+            background-color:  #f1b285;
+        }
+        .text_btn_reserve_english {
+            font-size: 48px;
+        }      
+        .text_btn_reserve_chinese {
+            font-size: 26px;
+        }
+        .footer {
+            width: calc(100vw - 120px);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 100px;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            z-index: 2;
+        }
+        .footer_copyright {
+            font-size: 16px;
+        }
+        .footer_contact {
+            display: flex;
+        }
+        .footer_contact li{
+            position: relative;
+            padding: 0px 8px;
+            list-style: none;
+        }
+        .footer_contact li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .footer_contact li + li::before {
+            content: '/';
+            color: #000;
+            position: absolute;
+            left: 0;
+        }
+        
+        .hairstyle_first {
+            width: calc(100vw - 120px);
+            display: flex;
+            padding: 80px 0 150px;
+            position: relative;
+            overflow: hidden;
+            /* 跑馬燈才不會跑出容器 */
+        }
+        .hairstyle_first_name {
+            width: calc((100vw - 120px -200px)/2);
+        }
+        .hairstyle_first_english {
+            font-size: 26px;
+            text-align: center;
+        }
+        .hairstyle_first_chinese {
+            text-align: end;
+            padding: 0 80px;
+        }
+    
+        .hairstyle_runvideo {
+            position: absolute;
+            z-index: -1;
+            top: 200px;
+            animation: marquee 20s linear infinite;
+            width: calc(100vw - 120px);
+        } /* 輪播共用 */
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }    
+        } /* 輪播共用 */
+        .hairstyle_runvideo p {
+            font-size: 100px;
+            color: #ccc;  
+            white-space: nowrap;
+            
+        }  /* 輪播共用 */
+        .hairstyle_first img {
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px;
+            border-radius: 20px;            
+        }
+        .hairstyle_first_heading {
+            width: calc((100vw - 120px -200px)/2);
+        } /*  右上角文字共用 */
+        .hairstyle_case_english{
+            /* text-align: end; */
+            position: absolute;
+            top: 0;
+            right: 80px;
+            font-size: 26px;
+            color: #afaeae;
+        } /*  右上角文字共用 */
+        .hairstyle_case_chinese {
+            /* text-align: end; */
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 20px;
+            color: #afaeae;
+        }
+        .hairstyle_first_heading_content {
+            width: 300px;
+            margin-left: 30px;
+            margin-top: 200px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .hairstyle_second {
+            width: calc(100vw - 120px);
+            display: flex;
+            /* justify-content: space-around; */
+            padding: 80px 0 150px;
+            /* box-sizing: border-box; */
+            position: relative;
+            overflow: hidden;
+            /* 跑馬燈才不會跑出容器 */
+            /* border: 3px solid blue; */
+
+        }
+        .hairstyle_second_name {
+            /* width: calc((100vw - 120px -200px)/2); */
+        }
+        .hairstyle_second_english {
+            font-size: 26px;
+            padding: 250px 70px 0 40px;
+        }
+        .hairstyle_second_chinese {}
+        .hairstyle_second_pic {}
+        .hairstyle_second img {
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px; 
+            border-radius: 20px;
+        }
+        
+        .hairstyle_second_heading {
+            width: calc((100vw - 120px -200px)/2);
+        }
+        .hairstyle_second_heading_content {
+            width: 300px;
+            margin-left: 200px;
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .hairstyle_third {
+            width: calc(100vw - 120px);
+            display: flex;
+            padding: 60px 0 150px;
+            position: relative;
+            overflow: hidden;
+            /* 跑馬燈才不會跑出容器 */
+        }
+        .hairstyle_third_name {
+            width: calc((100vw - 120px -200px)/2);
+        }
+        .hairstyle_third_english {
+            font-size: 26px;
+            padding: 0 30px;
+        }
+        .hairstyle_third_chinese {
+            padding: 60px 0 0 ;
+        }
+        .hairstyle_third_pic {
+            padding: 0px 0 0 100px;
+        }
+        .hairstyle_third img {
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px; 
+            border-radius: 20px;           
+        }
+        .hairstyle_third_heading {
+            width: calc((100vw - 120px -200px)/2);
+        }
+        .hairstyle_case_english{
+            position: absolute;
+            top: 0;
+            right: 80px;
+            font-size: 26px;
+            color: #afaeae;
+        }
+        .hairstyle_case_chinese {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 20px;
+            color: #afaeae;
+        }
+        .hairstyle_third_heading_content {
+            width: 300px;
+            margin-left: 30px;
+            margin-top: 250px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .latestnews {
+            width: calc(100vw - 120px);
+            display: flex;
+            justify-content: space-evenly;
+            padding: 80px 0 150px;
+            position: relative;
+            overflow: hidden;
+            /* 跑馬燈才不會跑出容器 */
+            /* border: 3px solid blue; */
+
+        }
+        .latestnews_word {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* width: calc((100vw - 120px -500px)/2); */
+        }
+        .latestnews_caption {
+            font-size: 26px;
+            line-height: 1.2;
+            width: 300px;
+            /* margin: auto; */
+            /* padding: 100px 70px 0 40px; */
+            /* border: 10px solid yellow; */
+            
+        }
+        .latestnews_content {
+            font-size: 16px;
+            width: 300px;
+            line-height: 1.5;
+        }
+        .latestnews_pic_first {
+            animation:  slide-up 1s ease-in-out;
+            animation-fill-mode: forwards;
+            
+        }
+        @keyframes slide-up {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-80px);
+            }
+        }
+        .latestnews_pic_second {
+            animation:  slide-down 1s ease-in-out;
+            animation-fill-mode: forwards;
+            
+        }
+        @keyframes slide-down {
+            from {
+                transform: translateY(-80px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .latestnews img {
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px;  
+            border-radius: 20px;          
+        }  
+        .latestnews_tag_english{
+            /* text-align: end; */
+            position: absolute;
+            top: 0;
+            right: 80px;
+            font-size: 26px;
+            color: #afaeae;
+        }
+        .latestnews_tag_chinese {
+            /* text-align: end; */
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 20px;
+            color: #afaeae;
+        }
+
+        .outfits {
+            width: calc(100vw - 120px);
+            display: flex;
+            /* justify-content: space-around; */
+            padding: 80px 0 100px;
+            /* box-sizing: border-box; */
+            position: relative;
+            overflow: hidden;
+            /* 跑馬燈才不會跑出容器 */
+            /* border: 3px solid blue; */
+
+        }
+        .outfits_word{
+            width: 450px;
+        }
+        .outfits_caption {
+            font-size: 36px;
+            text-align: end;
+            padding: 40px 40px 0 0;
+        }   
+        .hairstyle_runvideo {
+            position: absolute;
+            z-index: -1;
+            top: 200px;
+            animation: marquee 20s linear infinite;
+            width: calc(100vw - 120px);
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }    
+        }
+        .hairstyle_runvideo p {
+            font-size: 100px;
+            color: #ccc;  
+            white-space: nowrap;
+            
+        }
+        .outfits_pic{}
+        .outfits img {
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px;    
+            border-radius: 20px;        
+        }
+        .outfits_tag_english{
+            /* text-align: end; */
+            position: absolute;
+            top: 0;
+            right: 80px;
+            font-size: 26px;
+            color: #afaeae;
+        }
+        .outfits_tag_chinese {
+            /* text-align: end; */
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 20px;
+            color: #afaeae;
+        }
+        .outfits_heading {
+            width: 350px;   
+        }
+        .outfits_heading_content {
+            width: 300px;
+            margin-left: 30px;
+            margin-top: 230px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+    </style>
+</head>
+<body>
+    
+        <section class="logobar">
+            <div class="logobar_item_wire"></div>
+            <a href="01top.html"><img src="theoneoff-material\top\LOGO.png" alt=""></a>
+            <div class="logobar_item_wire"></div>
+    
+        </section>
+        <section class="horizontal">
+            <section class="horizontal_nav">
+                <div class="horizontal_nav_item">
+                    <a href="01about.html">ABOUT</a>
+                    <a href="01introduce.html">INTRODUCE</a>
+                    <a href="01workscase.html">CASES</a>
+                    <a href="01outfits.html">OUTFIT</a>
+                    <a href="01reserve.html">RESERVE</a>
+                    <a href="#" class="horizontal_nav_pic">
+                        <img src="theoneoff-material\comb.png">
+                    </a>
+                </div>
+            </section>
+        </section>
+        <section class="banner">
+            <div class="banner_img"></div>
+        </section>
+        <div class="text">
+            <div class="text_design">
+                <a href="#">DESIGN+<br>CONCEPT</a>
+            </div>
+            <div class="text_content">
+                <p>髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
+            </div>
+            <div class="text_btn">
+                <button class="text_btn_reserve">
+                    <div class="text_btn_reserve_english"><p>RESERVE</p></div>
+                    <div class="text_btn_reserve_chinese"><p>預約諮詢</p></div>
+                </button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_copyright">
+                <p>2023@jeffery</p>
+            </div>
+            <ul class="footer_contact">
+                <li><a href="#">LINE</a></li>
+                <li><a href="#">INSTRAGRAM</a></li>
+                <li><a href="#">FACEBOOK</a></li>
+            </ul>
+        </div>
+        <section class="hairstyle_first">
+            <div class="hairstyle_first_name">
+                <p class="hairstyle_first_english">AFRO DREADLOCKS</p> 
+                <p class="hairstyle_first_chinese">全真髮髒辨</p>
+            </div>
+            <a href="#" class="hairstyle_first_pic"><img src="theoneoff-material\top\design3.png" alt=""></a>
+            <p class="hairstyle_case_english">Works Case</p>
+            <p class="hairstyle_case_chinese">作品案例</p>
+            <div class="hairstyle_first_heading">
+                <p class="hairstyle_first_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
+            </div>
+            <div class="hairstyle_runvideo">
+                <p>JEFFERYOLD SCHOOL   JEFFERY  OLD SCHOOL JEFFERYOLD SCHOOL </p>
+            </div>        
+        </section>
+        <section class="hairstyle_second">
+            <div class="hairstyle_second_heading">
+                <p class="hairstyle_second_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
+            </div>
+            <div class="hairstyle_second_name">
+                <p class="hairstyle_second_english">EASY PERM</p> 
+                <p class="hairstyle_second_chinese">日系俐落型男</p>
+            </div>
+            <a href="#" class="hairstyle_second_pic"><img src="theoneoff-material\top\easyperm.png" alt=""></a>
+            <p class="hairstyle_case_english">Works Case</p>
+            <p class="hairstyle_case_chinese">作品案例</p>
+            
+            <div class="hairstyle_runvideo">
+                <p>JEFFERYOLD SCHOOL   JEFFERY  OLD SCHOOL JEFFERYOLD SCHOOL </p>
+            </div>        
+        </section>
+        <section class="hairstyle_third">
+            <a href="#" class="hairstyle_third_pic"><img src="theoneoff-material\top\japanwet.png" alt=""></a>
+            <div class="hairstyl_thirde_heading">
+                <p class="hairstyle_third_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
+            </div>
+            <div class="hairstyle_third_name">
+                <p class="hairstyle_third_chinese">日本濕系短髮</p>
+                <p class="hairstyle_third_english">WET STYLE BLEACH</p> 
+            </div>
+            <p class="hairstyle_case_english">Works Case</p>
+            <p class="hairstyle_case_chinese">作品案例</p>
+            
+            <div class="hairstyle_runvideo">
+                <p>JEFFERYOLD SCHOOL   JEFFERY  OLD SCHOOL JEFFERYOLD SCHOOL </p>
+            </div>        
+        </section>
+        <section class="latestnews">
+            <div class="latestnews_word">
+                <p class="latestnews_caption">精心於每一段髮絲，你的魅力由我來領引！</p> 
+                <p class="latestnews_content">精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！</p>
+            </div>
+            <a href="#" class="latestnews_pic_first"><img src="theoneoff-material\top\new1.png" alt=""></a>
+            <a href="#" class="latestnews_pic_second"><img src="theoneoff-material\top\new2.png" alt=""></a>
+            <div class="latestnews_word">
+                <p class="latestnews_caption">精心於每一段髮絲，你的魅力由我來領引！</p> 
+                <p class="latestnews_content">精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！</p>
+            </div>
+            <p class="latestnews_tag_english">Latest News</p>
+            <p class="latestnews_tag_chinese">最新消息</p>
+            
+            <div class="hairstyle_runvideo">
+                <p>JEFFERYOLD SCHOOL   JEFFERY  OLD SCHOOL JEFFERYOLD SCHOOL </p>
+            </div>        
+        </section>
+        <section class="outfits">
+            <div class="outfits_word">
+                <p class="outfits_caption">Black Is Forever ! </p> 
+            </div>
+            <div class="outfits_heading">
+                <p class="outfits_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
+            </div>
+        <a href="#" class="outfits_pic"><img src="theoneoff-material\top\top_outfit.png" alt=""></a>
+        <p class="outfits_tag_english">Works Case</p>
+        <p class="outfits_tag_chinese">作品案例</p>
+        
+        <div class="hairstyle_runvideo">
+            <p>JEFFERYOLD SCHOOL   JEFFERY  OLD SCHOOL JEFFERYOLD SCHOOL </p>
+        </div>        
+    </section>
+        
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+        .box{
+            width: 300px;
+            height: 100px;
+            background-color: blue;
+            position: fixed;
+            z-index: 1;
+        }
+        .introduce_card{
+            
+            padding: 200px 0 150px;
+            background-color: blueviolet;
+
+        }
+        
+        .introduce_card_banner{
+            /* outline: 2px solid blue; */
+            width: calc(100vw - 120px);
+            height: 100vh;
+            /* position: fixed; */
+            /* bottom: 0; */
+            background: 
+            linear-gradient(115deg, rgb(159, 197, 242) 50%,transparent 66%) center center / 100% 100% ,
+            url("theoneoff-material/introduce/introducer(2-2).png") right center /auto 100%;
+            /* box-shadow: */
+            /* 0 0 30px rgba(255, 0, 0, 0.3); */
+            /* 0 0 20px 20px rgba(255, 0, 0, 0.3), */
+            /* 0 0 30px 30px rgba(0, 255, 0, 0.3), */
+            /* 0 0 40px 40px rgba(0, 0, 255, 0.3); */   
+        }
+        /* .introduce_card_banner::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 5px 0 10px rgba(0, 0, 0, 1); */
+        /* } */
+        .introduce_card_banner_container{
+            /* border: 3px solid red; */
+            width: 80%;
+            max-width: 1440px;
+            height: 100%;
+            margin: auto;
+        }
+        .introduce_card_banner_container_txt{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .introduce_card_banner_container_txt h1{
+            font-size: 80px;
+            border-bottom: 1px solid rgb(253, 8, 8);
+            color: white;
+            /* 因為flex特性,所以會整塊都是 */
+        }
+        .introduce_card_banner_container_txt h1 small {
+            display: block;
+            font-size: 53px;
+            color: white;
+        }
+        .introduce_card_banner_container_txt h2{
+            font-size: 50px;
+            color: white;
+        }
+        .introduce_card_banner_container_txt p{
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto non, quos enim facilis autem, ex ipsa voluptatum praesentium impedit, ipsam reprehenderit atque officiis illo optio aperiam ut laborum necessitatibus?</p></p>
+    </div>
+
+    <div class="introduce_card">
+        <div class="introduce_card_banner">
+            <div class="introduce_card_banner_container">
+                <div class="introduce_card_banner_container_txt">
+                    <h1>追求完美！
+                        <small>
+                            髒辨藝術家
+                        </small>
+                    </h1>
+                    <h2>JEFFERY STYLE</h2>
+                    <p>髒辨黑人課程請直接私訊</p>
+                </div>
+            </div>       
+        </div>
+    </div>>
+</body>
+</html>

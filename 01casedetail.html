@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Alegreya Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+        .logobar{
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            width: calc(100vw - 120px);
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px 40px;
+            z-index: 1;
+            text-align: center;
+        }
+        .logobar_item{
+            /* font-size: 46px; */
+            display: inline-block;
+        }
+        .logobar_item_title, .logobar_item_subtitle{
+            text-align: center;
+        }
+        .logobar_item_title{
+            font-size: 30px;
+        }
+        .logobar_item_subtitle{
+            font-size: 20px;
+        }
+        .logobar_item_wire{
+            width: 930px;
+            height: 1px;      /*  中間的那條線 */
+            display: inline-block;
+            background-clip: content-box;
+            border-top: 3.5px solid #000;
+            border-bottom: 3.5px solid #000;
+            background-color: #000;
+            padding: 3px 0;
+            /* margin: 43px 25px ; */
+            vertical-align: bottom;
+            /* position: relative; */
+            /* border: 1px solid green; */
+        }
+        .logobar img{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: bottom;           
+        } 
+        .horizontal {
+            /* border: 3px solid blue; */
+            width: 120px;
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            background-color: white;
+        }
+        .horizontal_nav {
+            width: 118px;
+            height: 100vh;            
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+        .horizontal_nav_pic{
+            text-align: center;          
+        }
+        .horizontal .horizontal_nav_item img{
+            width: 15px;
+        }
+        .horizontal .horizontal_nav_item {
+            height: 980px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;            
+        }
+        .horizontal .horizontal_nav_item a{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            transform: rotate(-90deg);
+        }
+        .case{
+            width: calc(100vw - 120px);
+            padding: 180px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .case_shrink {
+            display: flex;
+            flex-direction: column;
+            padding: 0 20px 20px;
+
+        }
+        .case_shrink img{
+            width: 50px;
+            height: 50px;
+            padding: 0 5px 10px 5px;
+        }
+        .case_zoom {
+            padding: 0 50px 0 0;
+        }
+        .case_zoom img{
+            width: 300px;
+            height: 380px;
+            vertical-align: bottom;
+        }
+        .case_article {
+            width: 450px;
+        }
+        .case_article_title {
+            text-align: center;
+            font-size: 36px;
+            
+        }
+        .case_article_subtitle {
+            text-align: center;
+            font-size: 20px;
+
+        }
+        .case_article_content {
+            padding: 20px 0;
+        }
+        .case_article_content p {
+            padding: 0 0 60px ;
+        }
+
+        .separate_block{
+            width: calc(100vw - 140px);
+            display: inline-block;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: center;
+            padding: 30px 0;
+            margin: 40px 0;
+
+        }
+        .separate_block_title{
+            font-size: 36px;
+        }
+        .separate_block_subtitle{
+            font-size: 20px;
+        }
+        .idea{
+            width: calc(100vw - 140px);
+            padding: 40px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+        }
+        .idea_card{
+            /* outline: 4px solid blue;     */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .idea_card_pic{
+            width: 350px;
+            transform: skew(-4deg, 0);
+        }
+        .idea_card_pic img{
+            width: 270px;
+            height: 380px; 
+            vertical-align: bottom;
+            box-shadow: 20px 20px black;
+        }
+        .idea_card_english{
+            font-size: 26px;
+            padding: 30px 0 5px;
+        }
+        .idea_card_chinese{
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        .footer {
+            width: calc(100vw - 140px);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 100px;
+            box-sizing: border-box;
+            position: relative;
+            bottom: 0;
+        }
+        .footer_copyright {
+            font-size: 16px;
+        }
+        .footer_contact {
+            display: flex;
+        }
+        .footer_contact li{
+            position: relative;
+            padding: 0px 8px;
+            list-style: none;
+        }
+        .footer_contact li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .footer_contact li + li::before {
+            content: '/';
+            color: #000;
+            position: absolute;
+            left: 0;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <section class="logobar">
+        <a href="01top.html"><img src="theoneoff-material\top\LOGO.png" alt=""></a>
+        <div class="logobar_item">
+            <div class="logobar_item_title">作品細節</div>
+            <div class="logobar_item_wire"></div>
+            <div class="logobar_item_subtitle">CASE DETAILS</div>
+        </div>
+    </section>
+    <section class="horizontal">
+        <section class="horizontal_nav">
+            <div class="horizontal_nav_item">
+                <a href="01about.html">ABOUT</a>
+                <a href="01introduce.html">INTRODUCE</a>
+                <a href="01workscase.html">CASES</a>
+                <a href="01outfits.html">OUTFIT</a>
+                <a href="01reserve.html">RESERVE</a>
+                <a href="#" class="horizontal_nav_pic">
+                    <img src="theoneoff-material\comb.png">
+                </a>
+            </div>
+        </section>
+    </section>
+    <section class="case">
+        <div class="case_shrink">
+            <img src="theoneoff-material\works case\詳細作品\d1.png" alt="">
+            <img src="theoneoff-material\works case\詳細作品\d2.png" alt="">
+            <img src="theoneoff-material\works case\詳細作品\d3.png" alt="">
+            <img src="theoneoff-material\works case\詳細作品\d4.png" alt="">
+            <img src="theoneoff-material\works case\詳細作品\d5.png" alt="">   
+        </div>
+        <div class="case_zoom">
+            <img src="theoneoff-material\works case\詳細作品\d1.png" alt=""> 
+        </div>
+        <div class="case_article">
+            <div class="case_article_title">Afro dreadlocks</div>
+            <div class="case_article_subtitle">special hairstyle</div>
+            <div class="case_article_content">
+                <p>這顆髒辮主體視覺同樣選用中低層次，並在最上層做幾支長短不一的髒辮，讓整體看起來亂中有序更活潑，但這次的主角是顏色，每一隻都用非常搶眼的初音末來色並從深到白的漸變，視覺效果極強，就像是從二次元走出來一樣。</p>
+                <p>髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的，只要你有想法都歡迎提出來討論，當然也可以交給我設計，嚷你的髒辮有更多花樣✌️</p>
+                <p>_________</p>
+                <p>預約連結在ig首頁若有任何疑問也歡迎私訊小盒子<br>Line：yesbelow<br>營業時間：12:00～21:00<br>地址：桃園市民生路105號3樓</p>
+                <p>#afro #dreadlocks #braids #fadecut #barber #lifestyle #stylish #黑人燙 #髒辮 #剪髮 #男士理髮 #油頭 #經典油頭 #男士經典 #hiphop #嘻哈 #潮流 #饒舌 #街頭 #滑板 #穿搭 #時尚 #街舞 #特殊髮型 #jeffreydreadlocks #jeffreytop2022</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="separate_block">
+        <div class="separate_block_title">JEFFERY STYLE</div>
+        <div class="separate_block_subtitle">設計理念</div>
+    </section>
+    <section class="idea">
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design3.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">橘子汽水</div>
+        </div>
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design8.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">螺絲粉</div>
+        </div>
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design11.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">櫻木花道</div>
+        </div>
+        
+    </section>
+    <div class="footer">
+        <div class="footer_copyright">
+            <p>2023@jeffery</p>
+        </div>
+        <ul class="footer_contact">
+            <li><a href="#">LINE</a></li>
+            <li><a href="#">INSTRAGRAM</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+        </ul>
+    </div>
+
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Alegreya Sans SC', sans-serif;
+            padding: 0;
+            margin: 0;
+            /* outline: 1px solid red; */
+        }
+        .logobar{
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            width: calc(100vw - 120px);
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px 40px;
+            z-index: 2;
+            text-align: center;
+        }
+        .logobar_item{
+            /* font-size: 46px; */
+            display: inline-block;
+        }
+        .logobar_item_title, .logobar_item_subtitle{
+            text-align: center;
+        }
+        .logobar_item_title{
+            font-size: 30px;
+        }
+        .logobar_item_subtitle{
+            font-size: 20px;
+        }
+        .logobar_item_wire{
+            width: 930px;
+            height: 1px;      /*  中間的那條線 */
+            display: inline-block;
+            background-clip: content-box;
+            border-top: 3.5px solid #000;
+            border-bottom: 3.5px solid #000;
+            background-color: #000;
+            padding: 3px 0;
+            /* margin: 43px 25px ; */
+            vertical-align: bottom;
+            /* position: relative; */
+            /* border: 1px solid green; */
+        }
+        .logobar img{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: bottom;           
+        } 
+        .horizontal {
+            /* border: 3px solid blue; */
+            width: 120px;
+            display: inline-block;
+            position: fixed;
+            background-color: white;
+            box-sizing: border-box;
+            z-index: 3;
+            top: 0;
+            right: 0;
+        }
+        .horizontal_nav {
+            width: 118px;
+            height: 100vh;            
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+        .horizontal_nav_pic{
+            text-align: center;          
+        }
+        .horizontal .horizontal_nav_item img{
+            width: 15px;
+        }
+        .horizontal .horizontal_nav_item {
+            height: 980px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;            
+        }
+        .horizontal .horizontal_nav_item a{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            transform: rotate(-90deg);
+        }
+
+        .introduce_card{
+            width: calc(100vw - 140px);
+            padding: 200px 40px 150px;
+            box-sizing: border-box;
+            /* background-color: pink; */
+            /* position: relative; */
+            /* box-sizing: border-box; */
+        }
+        
+        .introduce_card_banner{
+            width: 100%;
+            /* width: calc(100vw - 140px); */
+            height: 100vh;
+            /* position: fixed; */
+            /* bottom: 0; */
+            background: 
+            linear-gradient(115deg, rgb(159, 197, 242) 50%,transparent 56%) center center / 100% 100% ,
+            url("theoneoff-material/introduce/introducer(2-2).png") right center /auto 100%;
+            box-shadow:
+            20px -20px 5px rgb(28, 28, 28);
+            /* 0 0 20px 20px rgba(255, 0, 0, 0.3), */
+            /* 0 0 30px 30px rgba(0, 255, 0, 0.3), */
+            /* 0 0 40px 40px rgba(0, 0, 255, 0.3); */   
+        }
+        .introduce_card_banner_container{
+            /* border: 3px solid red; */
+            width: 80%;
+            max-width: 1440px;
+            height: 100%;
+            margin: auto;
+        }
+        .introduce_card_banner_container_txt{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .introduce_card_banner_container_txt h1{
+            font-size: 60px;
+            border-bottom: 1px solid rgb(253, 8, 8);
+            color: white;
+            /* 因為flex特性,所以會整塊都是 */
+        }
+        .introduce_card_banner_container_txt h1 small {
+            display: block;
+            font-size: 40px;
+            color: white;
+        }
+        .introduce_card_banner_container_txt h2{
+            font-size: 30px;
+            color: white;
+        }
+        .introduce_card_banner_container_txt p{
+            font-size: 20px;
+            color: white;
+        }
+        .focus{
+            width: calc(100vw - 140px);
+            display: flex;
+            /* justify-content: space-around; */
+            padding: 0px 0 100px;
+            /* border: 3px solid blue; */
+            box-sizing: border-box;
+        }
+        .focus_pic{
+            padding: 40px 40px 40px 200px;
+            box-sizing: border-box;     
+        }
+        .focus_pic img{
+            vertical-align: bottom; 
+            width: 240px;
+            height: 350px;
+            border-radius: 20px; 
+            box-shadow:
+            -15px -15px 5px rgb(108, 106, 106);
+        }
+        .focus_txt{
+            width: 600px;
+            box-sizing: border-box;
+        }
+        .focus_txt_caption{
+            font-size: 36px;
+            text-align: end;
+            margin: 60px 40px;
+        }
+        .focus_txt_heading_content {
+            width: 300px;
+            margin-left: 30px;
+            margin-top: 130px;
+            font-size: 18px;
+            line-height: 1.5;   
+        }
+
+
+        .separate_block{
+            width: calc(100vw - 140px);
+            display: inline-block;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: center;
+            padding: 30px 0;
+            margin: 40px 0;
+
+        }
+        .separate_block_title{
+            font-size: 36px;
+        }
+        .separate_block_subtitle{
+            font-size: 20px;
+        }
+        .idea{
+            width: calc(100vw - 120px);
+            display: flex;
+            justify-content: center;
+        }
+        .idea_card{
+        width: 250px;
+        /* height: 250px; */
+        border: 4px solid black;
+        box-sizing: border-box;
+        position: relative;
+        padding: 30px 20px;
+        margin: 40px;
+        
+        }
+        .idea_title{
+        width: 250px;
+        box-sizing: border-box;
+        background-color: #7e7e7e;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: -25px;
+        left: -36px;
+        font-size: 20px;
+        text-align: center;
+        padding: 8px 6px;
+        z-index: 1;
+        }
+        .idea_content{
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1,5;
+
+        }
+        .triangle{
+        width: 0px;
+        height: 0px;
+        top: 15px;
+        left: -36px;
+        border-right: 30px solid black;
+        border-bottom: 30px solid white;
+        position: absolute;
+        }
+
+        .article {
+            width: calc(100vw - 140px);
+            padding: 40px 0 100px;
+            
+        }
+        .article_content {
+            margin: auto;
+            width: 500px;
+            font-size: 16px;
+            line-height: 1.5;
+
+        }
+
+
+        .workcase{
+            width: calc(100vw - 140px);
+            padding: 50px 0 150px;
+            /* margin: 80px 0; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            overflow: hidden;
+            /* border: 1px solid blue; */
+        }
+        .workcase_card{
+            /* outline: 4px solid blue;     */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .workcase_card_pic{
+            width: 350px;
+            /* transform: skew(-4deg, 0); */
+        }
+        .workcase_card_pic img{
+            width: 240px;
+            height: 350px; 
+            vertical-align: bottom;
+            box-shadow: 20px 20px black;
+            transform: skew(-4deg, 0);
+            backface-visibility: hidden;
+        }
+        .workcase_card_english{
+            font-size: 26px;
+            padding: 30px 0 5px;
+        }
+        .workcase_card_chinese{
+            font-size: 20px;
+            padding: 5px;
+        }
+        .workcase_top_runvideo {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            animation: marquee_top 20s linear infinite;
+            width: calc(100vw - 140px);
+        }
+        .workcase_bottom_runvideo {
+            position: absolute;
+            z-index: -1;
+            bottom: 100px;
+            animation: marquee_bottom 20s linear infinite;
+            width: calc(100vw - 140px);
+        }
+        @keyframes marquee_top {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }    
+        }
+        @keyframes marquee_bottom {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }    
+        }
+        .workcase_top_runvideo p,
+        .workcase_bottom_runvideo p {
+            font-size: 20px;
+            color: #de3e3e;  
+            white-space: nowrap;
+            padding: 0 30px ;
+            
+        }
+        .workcase_top_runvideo span,
+        .workcase_bottom_runvideo span {
+            padding: 0 20px 0 0;
+        }
+        .youtube {
+            width: calc(100vw - 120px);
+            padding: 45px 0;
+        }
+        .youtube_mv{
+            width: 50%;
+            position: relative;
+            margin: auto;
+        }
+        /* .frame{
+            width: 100%;
+            padding-bottom: 56.25%;
+            background-color: #f00;
+            
+        } */
+        iframe{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .youtube_mv::after{
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+        /* .youtube {
+            padding: 40px 0 20px;
+            position: relative;
+            width: calc(100vw - 140px);
+        }
+        .youtube img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+        .youtube_title {
+            position: absolute;
+            top: 180px;
+            right: 130px;
+            font-size: 80px;
+            color: #de3e3e;
+            text-decoration: none;
+        } */
+        .footer {
+            width: calc(100vw - 140px);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 100px;
+            box-sizing: border-box;
+            position: relative;
+            bottom: 0;
+        }
+        .footer_copyright {
+            font-size: 16px;
+        }
+        .footer_contact {
+            display: flex;
+        }
+        .footer_contact li{
+            position: relative;
+            padding: 0px 8px;
+            list-style: none;
+        }
+        .footer_contact li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .footer_contact li + li::before {
+            content: '/';
+            color: #000;
+            position: absolute;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="logobar">
+        <a href="01top.html"><img src="theoneoff-material\top\LOGO.png" alt=""></a>
+        <div class="logobar_item">
+            <div class="logobar_item_title">設計師介紹</div>
+            <div class="logobar_item_wire"></div>
+            <div class="logobar_item_subtitle">DESIGNER INTRODUCE</div>
+        </div>
+    </section>
+    <section class="horizontal">
+        <section class="horizontal_nav">
+            <div class="horizontal_nav_item">
+                <a href="01about.html">ABOUT</a>
+                <a href="01introduce.html">INTRODUCE</a>
+                <a href="01workscase.html">CASES</a>
+                <a href="01outfits.html">OUTFIT</a>
+                <a href="01reserve.html">RESERVE</a>
+                <a href="#" class="horizontal_nav_pic">
+                    <img src="theoneoff-material\comb.png">
+                </a>
+            </div>
+        </section>
+    </section>
+    <section class="introduce_card">
+        <div class="introduce_card_banner">
+            <div class="introduce_card_banner_container">
+                <div class="introduce_card_banner_container_txt">
+                    <h1>追求完美！
+                        <small>
+                            髒辨藝術家
+                        </small>
+                    </h1>
+                    <h2>JEFFERY STYLE</h2>
+                    <p>髒辨黑人課程請直接私訊</p>
+                </div>
+            </div>       
+        </div>
+    </section>
+    <section class="focus">
+        <div class="focus_pic"><img src="theoneoff-material\top\new2.png" alt=""></div>
+        <div class="focus_txt">
+            <div class="focus_txt_caption">
+                專注自己。
+            </div>
+            <div class="focus_txt_heading_content">
+                <p>從努力討好到忠於自己，出道12年的成長：「作為一個人，首先要正視自己的內心。」
+                    出道十二年，15歲的jeffery被人們熱烈注視著度過了青春期，慢慢成熟。她作為歌手出道，又接觸表演，並嘗試製作人，每一次結果的好壞她都收下、消化。她身上成熟後愈發顯現勇敢和溫柔，像風裡的梔子花。</p>
+            </div>
+        </div>
+        
+    </section>
+    <section class="separate_block">
+        <div class="separate_block_title">JEFFERY STYLE</div>
+        <div class="separate_block_subtitle">設計理念</div>
+    </section>
+    <section class="idea">
+        <section class="idea_card">
+            <div class="idea_title">黑與橘的碰撞</div>
+            <div class="idea_content">自然層次，再隨性的用紅橘黃挑染點綴，相近色的顏色混在一起可以說是最容易的特殊染色，又比單一色更豐富一點。</div>
+            <div class="triangle"></div>
+        </section>
+        <section class="idea_card">
+            <div class="idea_title">rainbow漸層</div>
+            <div class="idea_content">短的髒辮控制好每一根的長度，讓他看起來參差但又亂中有序，比較自然一些，劉海區完全不同色點綴，讓它多了點可愛的玩心。</div>
+            <div class="triangle"></div>
+        </section>
+        <section class="idea_card">
+            <div class="idea_title">美式街頭風</div>
+            <div class="idea_content">如果太整齊的髒辮不是你們喜歡的，那這種故意做舊的自然感髒辮說不定你們可以考慮看看，這個配色我也不用多說了吧，加點飾品又是一顆氣場很強的頭。</div>
+            <div class="triangle"></div>
+        </section>
+    </section>
+    <section class="article">
+        <div class="article_content">
+            <p>髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的，只要你有想法都歡迎提出來討論，當然也可以交給我設計，嚷你的髒辮有更多花樣✌️</p>
+        </div>
+
+    </section>
+    <section class="separate_block">
+        <div class="separate_block_title">WORKS CAES</div>
+        <div class="separate_block_subtitle">作品案例</div>
+    </section>
+    <section class="workcase">
+        <div class="workcase_card">
+            <div class="workcase_card_pic">
+                <a href="#"><img src="theoneoff-material\introduce\design3.png" alt=""></a>
+            </div>
+            <div class="workcase_card_english">dreadlocks</div>
+            <div class="workcase_card_chinese">橘子汽水</div>
+        </div>
+        <div class="workcase_card">
+            <div class="workcase_card_english">dreadlocks</div>
+            <div class="workcase_card_chinese">螺絲粉</div>
+            <div class="workcase_card_pic">
+                <a href="#"><img src="theoneoff-material\introduce\design8.png" alt=""></a>
+            </div>
+        </div>
+        <div class="workcase_top_runvideo">
+            <p> <span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span>      
+            </p>
+        </div> 
+        <div class="workcase_bottom_runvideo">
+            <p> <span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span><span>JEFFERY</span><span>OLD SCHOOL</span>      
+            </p>
+        </div>
+    </section>
+    <section class="separate_block">
+        <div class="separate_block_title">YOUTUBE</div>
+        <div class="separate_block_subtitle"></div>
+    </section>
+    <section class="youtube">
+        <section class="youtube_mv">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hWJTa8yNWY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </section>
+
+    </section>
+    </section>
+    <div class="footer">
+        <div class="footer_copyright">
+            <p>2023@jeffery</p>
+        </div>
+        <ul class="footer_contact">
+            <li><a href="#">LINE</a></li>
+            <li><a href="#">INSTRAGRAM</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

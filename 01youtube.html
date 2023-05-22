@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .video-wrapper {
+  width: 560px; /* 设置所需的宽度 */
+  height: 315px; /* 设置所需的高度 */
+  margin: 0 auto; /* 居中视频播放器 */
+  background-color: #000000; /* 设置背景颜色 */
+}
+
+/* 您可以针对视频播放器内的特定元素进行定位 */
+.video-wrapper iframe {
+  border: none; /* 移除边框 */
+}
+
+.video-wrapper iframe:focus {
+  outline: none; /* 移除焦点样式 */
+}
+
+.video-wrapper iframe::after {
+  content: "自定义叠加层"; /* 添加自定义叠加层 */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 140px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=QZx4ECxiRY8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+</body>
+</html>

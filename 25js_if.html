@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2> if 句型2 多行描述</h2>
+    <script>
+        var avg = 47;
+        if (avg>=60){
+            document.write( "通過", "<br>");
+            document.write( "證書列應中<br>");
+        }else{
+            document.write( "在努力", "<br>");
+            document.write( "多喝水<br>");
+        }
+    </script>
+    <h2>句型3(複雜條件一 邏輯)</h2>
+    <script>
+        var avg = 80;
+        var math = 61;
+        if(avg >= 80 && math > 70){
+            document.write( "通過", "<br>");
+            document.write( "通過<br>");
+        }else{
+            document.write( "nono", "<br>");
+        }
+    </script>
+    <h2>句型4(if else if..)</h2>
+    <script>
+        var avg = 78;
+        var grade;
+        if(avg>=90){
+            grade="A";
+        } else if (avg>=80){
+            grade="B";
+        } else if (avg>=70){
+            grade="C";
+        } else if (avg>=60){
+            grade="D";
+        } else             {
+            grade="E";
+        }
+        document.write( "grade : ", grade , "<br>");
+    </script>
+    <h2>if句型5</h2>
+    <script>
+        var lowType = 3;
+        var eduction = false;
+        var amount;
+
+        if(lowType===1){
+            // lowtype=3,如果等號只有一個,會使類別變成1(自動轉型),有讀書,amount=5000+1000=6000
+            amount=5000;
+            if(eduction ===true){
+                amount = amount + 1000;
+            }
+        } else if (lowType===2){
+            // lowtype=2,如果等號有三個,最嚴格,數值對數值,2===2,amount=3000
+            amount="3000";
+        } else if (lowType===3){
+            amount="1000";
+            // lowtype=3,如果等號有兩個,因為都是數值比較,3不等於類別1.2,所以3等於類別3,amount=1000
+        } else {
+            amount=0;
+        }
+        document.write( "補助款 : ", amount , "<br>");
+        // 若重複宣告,會優先選擇上面的
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- owl官網>docs>installment>找連結 -->
+    <!-- <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
+    <!-- 檔案在owlcarousel載下來解壓縮後,找電腦裡面的路徑相同檔案連結 -->
+    <link rel="stylesheet" href="dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="dist/assets/owl.theme.default.min.css">
+</head>
+<body>
+    
+    <!-- owl官網>docs>installment>set HTML -->
+    <!-- 套件的html名稱也要更改>owl-theme -->
+    <div class="owl-carousel owl-theme">
+        <div>
+            <img src="https://picsum.photos/300/200/?random=10">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=11">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=12">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=13">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=10">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=10">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/200/?random=10">
+        </div>
+      </div>
+    <!-- owl官網>docs>installment>找連結 -->
+    <!-- <script src="jquery.min.js"></script> -->
+    <!-- jscdn官網>jquery3.6.4>copy連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="owlcarousel/owl.carousel.min.js"></script> -->
+    <script src="dist/owl.carousel.min.js"></script>
+
+    <!-- 調用插件 call the plugin-->
+    <!-- demos去找套件 -->
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
+        });
+
+    </script>
+
+</body>
+</html>

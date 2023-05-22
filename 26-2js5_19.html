@@ -1,0 +1,48 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>event handler</title>
+    </head>
+    
+    <body cz-shortcut-listen="true">
+    
+    <input type="button" name="btn" value="10+20=?[0]" onclick="showAns();">&nbsp;&nbsp;
+    <input type="button" name="btn" value="10+20=?[1]">&nbsp;&nbsp;
+    <input type="button" name="btn" value="10+20=?[2]">&nbsp;&nbsp;  
+    
+    <script>
+    function showAns(){
+        var a=10; 
+        var b=20; 
+        window.alert(a+b)//一個顯示彈出視窗的語句。在這個語句中，將變數 a 和 b 相加，並將結果作為訊息顯示在彈出視窗中。
+    }
+    function showAns(){
+        window.alert("nononono");
+    }
+
+    function angry(){
+        window.alert(">000000<");
+    }
+
+    function smile(){
+        window.alert("^______^");
+    }
+
+    
+    let btns = document.getElementsByName("btn");
+    btns[1].onclick = showAns;//btns變數中的第1個索引值,點擊時,套用showAns函式
+    btns[1].onclick = angry;//無法對同一個事件設定兩個事件處理器
+    btns[2].addEventListener("click", smile, false);    
+    btns[2].addEventListener("click", angry, false);//這段程式碼使用了事件監聽器，將 showAns 函式與指定的按鈕關聯起來。以下是對這段程式碼的解釋：
+
+// btn[2] 是一個表示按鈕元素的陣列，其中 [2] 表示這個陣列中的第三個元素（索引從 0 開始）。
+
+// addEventListener 是一個方法，用於綁定事件處理函式到指定的元素上。它接受三個參數：
+
+// 第一個參數是事件名稱，這裡是 "click"，表示點擊事件。
+// 第二個參數是要綁定的事件處理函式，這裡是 showAns，表示當按鈕被點擊時要執行的函式。
+// 第三個參數是一個布林值，表示事件的冒泡行為。在這裡，false 表示事件不會冒泡，即只觸發綁定在這個按鈕上的事件處理函式，不會觸發其父元素上的事件處理函式。
+// 這段程式碼的作用是將 showAns 函式綁定到 btn[2] 所代表的按鈕元素上，當該按鈕被點擊時，就會執行 showAns 函式。
+
+    </script> 
+    
+    </body></html>

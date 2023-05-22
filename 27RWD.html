@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .card-list{
+            /* width: 1200px; */
+            max-width: 1200px;
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* margin: auto; */
+        }
+        .card{
+            /* width: 280px; */
+            /* width: 23.333%; */
+            /* width: calc(100% / 4 - 20px); */
+            /* margin: 10px; */
+            /* margin: 0 0.8333%; */
+            /* width: 100%; */
+            padding: 10px;
+            margin: 10px;
+            background-color: #fa0;
+            border: 1px solid black;
+            box-sizing: border-box;
+            position: relative;  
+        }
+        
+        .card img{
+            width: 100%;
+            vertical-align: top;
+        }
+        @media screen and (min-width: 768px ){
+            .card-list {
+                display: flex;
+                flex-wrap: wrap;
+                /* flex-direction: row; */
+            }
+            .card {
+                width: calc(100% / 3 - 20px);  
+                /* 20px為margin */
+                /* flex-wrap: wrap; */
+            }
+        }
+        @media screen and (min-width: 1024px){
+            .card{
+                width: calc(100% / 4 - 20px);
+            }
+            
+        }
+        @media screen and (min-width: 1200px){
+            .card{
+                width: calc(100% / 6 - 20px);
+            }
+        }
+        
+        
+
+        
+
+    </style>
+</head>
+<body>
+        <div class="card-list">
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200?random=2">
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit rerum voluptatibus porro numquam, sed voluptas esse, velit, quis aperiam cumque. Reiciendis vitae neque quaerat? Voluptates maiores recusandae beatae ad.
+                </div>
+            </div>
+        </div>
+    
+    
+</body>
+</html>

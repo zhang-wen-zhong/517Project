@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS 樣式設定 */
+    .full-page {
+      height: 100vh; /* 設定滿版頁面的高度為視窗高度 */
+      scroll-snap-align: start; /* 讓滿版頁面在滾動時對齊視窗頂部 */
+    }
+
+    #page1 {
+      background-color: lightblue;
+    }
+
+    #page2 {
+      background-color: lightgreen;
+    }
+
+    #page3 {
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 滿版頁面 1 -->
+  <div id="page1" class="full-page">
+    <h1>滿版頁面 1</h1>
+  </div>
+
+  <!-- 滿版頁面 2 -->
+  <div id="page2" class="full-page">
+    <h1>滿版頁面 2</h1>
+  </div>
+
+  <!-- 滿版頁面 3 -->
+  <div id="page3" class="full-page">
+    <h1>滿版頁面 3</h1>
+  </div>
+
+  <script>
+    // 監聽滾輪事件
+    window.addEventListener('wheel', function(event) {
+      event.preventDefault(); // 取消預設的滾動行為
+    });
+  </script>
+</body>
+</html>

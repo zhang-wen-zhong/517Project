@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid red; */
+        }
+        .A {
+            padding: 30px;
+            border: 10px solid red;
+            position: relative;
+        }
+        .box_model {
+            padding: 30px;
+            border: 10px solid red;
+            position: relative;
+        }
+        .box{
+            position: absolute;
+            background-color: orange;
+            left: 0;
+            
+            
+        }
+        .card{
+            width: 250px;
+            border: 1px solid orange;
+            padding: 6px;
+            position: relative;
+            margin: 100px;
+        }
+        .card_tag {
+            background-color: blueviolet;
+            left: 0;
+            top: 15px;
+            position: absolute;
+        }
+        .card_pic img {
+            width: 100%;
+        }
+        .box{
+        width: 0px;
+        height: 0px;
+        top: 5px;
+        left: -36px;
+        /* border-top: 30px solid #F00; */
+        border-right: 30px solid black;
+        border-bottom: 30px solid white;
+        /* border-left: 30px solid #000; */
+    }
+    .idea{
+        width: 250px;
+        /* height: 250px; */
+        border: 4px solid black;
+        box-sizing: border-box;
+        position: relative;
+        padding: 30px 20px;
+        margin: 40px;
+        
+    }
+    .idea_title{
+        width: 250px;
+        box-sizing: border-box;
+        background-color: #7e7e7e;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: -25px;
+        left: -36px;
+        font-size: 20px;
+        text-align: center;
+        padding: 8px 6px;
+        z-index: 2;
+    }
+    .idea_content{
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1,5;
+
+    }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="A">
+        <div class="box_model">
+            <div class="box">box</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card_tag">直播中</div>
+        <div class="card_pic">
+            <img src="https://fakeimg.pl/300x200/200">
+        </div>
+        <h3>title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias delectus blanditiis, ipsum explicabo repellat commodi placeat accusantium distinctio tempora aut eveniet,</p>
+        <div class="box"></div>
+    </div>
+    
+    <section class="idea">
+        <div class="idea_title">黑與橘的碰撞</div>
+        <div class="idea_content">自然層次，再隨性的用紅橘黃挑染點綴，相近色的顏色混在一起可以說是最容易的特殊染色，又比單一色更豐富一點。</div>
+        <div class="box"></div>
+    </section>
+    <!-- <section class="idea">
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design14.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">薰衣草紫</div>
+        </div>
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design8.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">螺絲粉</div>
+        </div>
+        <div class="idea_card">
+            <div class="idea_card_pic">
+                <img src="theoneoff-material\introduce\design11.png" alt="">
+            </div>
+            <div class="idea_card_english">dreadlocks</div>
+            <div class="idea_card_chinese">櫻木花道</div>
+        </div>
+        
+    </section> -->
+</body>
+</html>

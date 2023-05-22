@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: pink;
+        }
+        .problem{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+        <!-- <h2>Q1</h2>
+        <script>
+		var name = "度數";
+	    var celsius =30;
+	    var f = 32;
+        document.write("<table border='1'>");	
+        document.write("<tr><th>溫度</th><td>", name ,"</td></tr>");
+        document.write(`<tr><td>攝氏溫度</th><td>${celsius}</td></tr>`);
+        document.write(`<tr><td>華氏溫度</th><td>${f+celsius*1.8}</td></tr>`);
+        document.write("</table>");
+        </script> -->
+
+        <!-- <h2>Q2</h2>
+        <script>
+            var name = "時間";
+	    var hour =16;
+	    var minute =54;
+	    var second =20;
+	    var total  = hour*3600+minute*60+second;
+        document.write("<table border='1'>");	
+        document.write("<tr><th>單位</th><td>", name ,"</td></tr>");
+        document.write(`<tr><td>小時</th><td>${hour}</td></tr>`);
+        document.write(`<tr><td>分鐘</th><td>${minute}</td></tr>`);
+        document.write(`<tr><td>秒數</th><td>${second}</td></tr>`);
+        document.write(`<tr><td>經過秒數</th><td>${total}</td></tr>`);
+        document.write("</table>");
+        </script>
+
+        <h2>Q3</h2>
+        <script>
+        var name = "時間";
+	    var total  = 8000;
+	    var hour = Math.floor(total/3600);
+	    var minute = Math.floor(total%3600/60);
+	    var second =Math.floor(total%3600)%60;
+        document.write("<table border='1'>");	
+            document.write("<tr><th>單位</th><td>", name ,"</td></tr>");
+            document.write(`<tr><td>經過秒數</th><td>${total}</td></tr>`);
+        document.write(`<tr><td>小時</th><td>${hour}</td></tr>`);
+        document.write(`<tr><td>分鐘</th><td>${minute}</td></tr>`);
+        document.write(`<tr><td>秒數</th><td>${second}</td></tr>`);
+        document.write("</table>");
+        </script>
+
+        <h2>Q4</h2>
+        <script>
+            var price = 30;
+            var buy = 2;
+            var amount = buy*price;
+            if (amount>=500){
+                document.write(`一斤橘子30元,買了${buy}斤,總價為${amount*0.9}`, "<br>");
+            }else{
+                document.write( `一斤橘子30元,買了${buy}斤,總價為${amount}`, "<br>");
+            }
+        </script>
+
+        <h2>Q5</h2>
+        <script>
+            var price = 30;
+            var buy = 30;
+            var amount = buy*price;
+            if (amount>=1000){
+                amount=buy*price*0.7;
+            }else if(amount < 1000 && amount>=500){
+                amount=buy*price*0.9;
+            }else{
+                amount;
+            }
+            document.write( `一斤橘子30元,買了${buy}斤,總價為${amount}`, "<br>");
+        </script>
+
+        <h2>Q6</h2>
+        <script>
+            var level= 3;
+            var weight =200;
+            var total=0;
+            
+            if(level===1){
+                if(weight<=40){
+                    var price=30;
+                    var total= price*weight;   
+                }else if(weight>40 && weight<100){
+                    var price=25;
+                    var total= price*weight;   
+                }else if(weight>=100){
+                    var price=20;
+                    var total= price*weight;   
+                }
+            }
+            if(level===2){
+                if(weight<=40){
+                    var price=25;
+                    var total= price*weight;   
+                    
+                }else if(weight>40 && weight<100){
+                    var price=20;
+                    var total= price*weight;   
+                }else if(weight>=100){
+                    var price=15;
+                    var total= price*weight;   
+                }
+            }
+            if(level===3){
+                if(weight<=40){
+                    var price=20;      
+                    var total= price*weight;   
+                }else if(weight>40 && weight<100){
+                    var price=15;
+                    var total= price*weight;   
+                }else if(weight>=100){
+                    var price=10;
+                    var total= price*weight;   
+                }
+            }
+            document.write(`等級${level}的橘子買${weight}公斤,一公斤為${price}元,總共${total}元`);
+            
+        </script>
+        
+        <h2>Q7</h2>
+        <script>
+            var net = 2530000;
+            var tax=0;
+            var difference=0;
+            var amount=0;
+
+            if(net<=560000){
+                var tax=0.05;
+                var difference=0;
+                var amount=net*tax-difference;    
+            }else if(net>560001 && net<=1260000){
+                var tax=0.12;
+                var difference=39200;
+                var amount=net*tax-difference;  
+            }else if(net>1260001 && net<=2520000){
+                var tax=0.20;
+                var difference=140000;
+                var amount=net*tax-difference;  
+            }else if(net>2520001 && net<=4720000){
+                var tax=0.3;
+                var difference=392000;
+                var amount=net*tax-difference;  
+            }else if(net>4720000){
+                var tax=0.4;
+                var difference=864000;
+                var amount=net*tax-difference;  
+            }
+            document.write("綜合所得淨額:",net,"<br>")
+            document.write("應納稅額:",amount,"<br>")
+        </script> -->
+        
+        <h2>Q8</h2>
+        <script>
+            var n = 10;
+            var sum = 0;
+            var oddsum = 0;
+            var evensum=0;
+
+            for(var i=1; i<=n; i++){
+                sum += i;
+                if(i%2 === 1){ //如果是奇數
+                    oddsum += i;
+                }else{ //如果是偶數
+                    evensum += i;
+                }   
+            }
+            document.write("sum:", sum," <br>");
+            document.write("oddsum:", oddsum, "<br>");
+            document.write("evensum:", evensum, "<br>");
+        </script>
+        
+        <h2>Q9</h2>
+        <script>
+            var totalAmount = 0;
+            for(var i=0; i<10; i++){ 
+                var randomAmount = Math.floor(Math.random()*12); //隨機生成0~11之間的整數
+                totalAmount += randomAmount; 
+                document.write('第' + (i + 1) + '次摸彩金額' + randomAmount*100 + '元',"<br>");
+            }
+            document.write('彩球總金額:' + totalAmount*100 + '元');
+            
+        </script>
+
+        <h2>Q10</h2>
+        <script>
+            var sum = 0;
+            for(var i=0; i<11; i++){
+                sum += Math.floor(Math.random() * 11);
+                if (Math.floor(Math.random()*11) === 0 || i === 10){
+                    document.write('第' + ( i + 1 ) + '次摸彩' + sum*100 + '元');//隨機面額為0 或是 第11次摸獎 才結束迴圈
+                    break;
+                }
+            } 
+        </script>
+
+        <h2>Q11.repeat練習</h2>
+        <script>
+             var str = "*";//repeat()用於重複一個字串特定次數,生成新的字串
+        var re = str.repeat(3);//str為要重複的字串 ()裡正整數為重複的次數
+        document.write(re);
+        </script>
+
+        <h2 >Q11</h2>
+        <script>
+        for(var i = 1; i < 7; i++){ //印6行
+            // for(var j = 1; j < 2; j++){ 
+            var str = "*";
+                var pattern = str.repeat(i);//第一印一個*//第二航印兩個*
+                document.write(pattern);
+            // }
+            document.write("<br>");
+        }      
+       
+        </script>
+
+        <h2>Q12練習</h2>
+        <script>
+            var str = "hello"; 
+            var reverseStr = str.split('').reverse().join('');//將變數str轉換成字串,split('')將字串分隔為單個字元的陣列
+            document.write(reverseStr);
+        </script>
+        <h2>Q12</h2>
+        <script>
+            var str12 = "*";
+            for(let i = 1; i < 7; i++){
+                let pattern = str12.repeat(i);
+                document.write(pattern);   
+                document.write("<br>");
+            }
+            for(let i = 5; i >= 1; i--){
+                let pattern = str12.repeat(i);
+                document.write(pattern);   
+                document.write("<br>");
+            }
+              
+        </script>
+
+        <h2 class="problem">Q13</h2>
+        <script>
+            for(var i = 0; i < 1; i++){
+                var space = "";
+                for(var j =1; j < 7; j++){
+                    space += j;
+                    
+                    document.write(space,"<br>");
+                }
+            }
+
+            for(var i = 0; i < 1; i++){
+                var space = "";
+                for(var j =1; j < 7; j++){
+                    space += j;
+                    if(i < j){
+                        space += "+";
+                    }
+                    document.write(space,"<br>");
+                }
+            }
+        </script>
+
+        <h2 class="problem">Q14</h2>
+        <script>
+            var arr = [];
+            var amount = 0;
+            for( i = 0; i <10; i++){
+                var str = arr.push(Math.floor(Math.random()*101));//陣列的加入形式不同
+                var min = Math.min(...arr);
+                var max = Math.max(...arr);
+                amount += str[i];//????????
+            }
+
+            document.write("陣列中產生的隨機10個數字 : ", arr, "<br>");
+            document.write("總和 : ", amount,"<br>");
+            document.write("最小值 : ", min, "<br>");
+            document.write("最大值 : ", max, "<br>");
+        </script>
+
+        <h2>Q15</h2>
+        <script>
+            var arr = [];
+            for(i = 0; i < 6; i++){//indexOf是找特定元素在陣列中的索引值,如果指定的元素不再陣列中,則返回-1
+                var str = arr.push(Math.floor(Math.random()*50));
+                if( arr.indexOf(Number) === -1){
+                    continue;
+                }
+            }
+            document.write("陣列中產生的隨機6個數字 : ", arr, "<br>");
+        </script>
+
+        <h2>Q16</h2>
+        <style>
+            
+        </style>
+        <script>
+            var arr = [["電話", "姓名",  "電話", "地址"], [94951002, "劉曉明",  094444443, "大壢市中大路277"], [94951003, "小王子",  0999999933, "中壢市小北路2"], [94951003, "小王子",  0999999933, "中壢市小北路2"]];
+            // html += "<td style='color: blue;'></td>";
+            
+            // html +="<td>" + "ss" + "</td>";
+                var html = "<table border = '1' cellspacing ='0'>";
+            for(let i=0; i<arr.length; i++){
+            html +="<tr>" ;
+            for(let j=0; j<4; j++){
+                html +="<td>" + arr[i][j] + "</td>";
+            }
+            html +="</tr>";
+            }
+            html += "</table>"; //html = html + "</table>";
+
+            document.write( html, "<br>");
+        </script>
+        
+        <h2>Q17</h2>
+        <script>
+            function rand(min, max){
+                
+            }
+        </script>
+
+        <h2>Q18</h2>
+
+        
+    
+    
+</body>
+</html>

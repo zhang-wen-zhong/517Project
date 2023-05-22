@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{color:deeppink;}
+    </style>
+</head>
+<body>
+    <h2>使用sort()---會改變排序</h2>
+<script>
+var arr = [ 40, 20, 50, 70, 30, 80, 7];
+
+arr.sort();//sort 別人寫的函數
+document.write( arr, "<br>");	
+</script>    
+
+<h2>自己排</h2>
+<script>
+var arr = [ 40, 20, 50, 70, 30, 80, 7];
+
+for(let i=0; i<6; i++){
+    for(let j=i+1; j<6; j++){ //和後面的位置比比看
+        if(arr[i] > arr[j]){ //交換位置
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+document.write( arr, "<br>");
+</script>
+
+
+<h2>使用sort() 搭配compare function---從小排到大</h2>
+<script>
+    function compareAsc(a, b){ //從小排到大 a:40 b:20
+        return a-b; //40-20=20 ====>20, 40 這個比較表達式的結果會被返回
+    }
+    var arr = [ 40, 20, 50, 70, 30, 80, 7];
+    arr.sort(compareAsc);
+document.write( arr, "<br>");	
+</script>
+
+<h2>使用sort() 搭配compare function從大排到小</h2>
+<script>
+    function compareAsc(a, b){ //從大排到小 a:40 b:20
+        return b-a; //20-40=-20 ====>40, 20
+    }
+    var arr = [ 40, 20, 50, 70, 30, 80, 7];
+    arr.sort(compareAsc);//compareAsc被稱為callback function,代表現在沒有要執行,等arr需要時才執行
+document.write( arr, "<br>");	
+</script>
+
+<h2>字串比大小</h2>
+<script>
+    var words =[
+    "No cross, no crown.",
+    "Sometime ever, sometime never.",
+    "In the dull and boring world, there is also occasional luck.",
+    "Treat yourself well.",
+    "No fear of words, no fear of years.",
+    "Don’t let the past steal your present.",
+    "Be cheerful and hopeful."
+    ];
+    
+    function myCompareFun(str1, str2){
+        return str2.length - str1.length;
+    }
+
+    words.sort(myCompareFun);
+    for(let word of words){
+        document.write( word, "<br>");
+    }
+</script>
+    <h2>函式物件可以當作資料傳入函式</h2>
+    <script>
+        function doubleFunc(x, i){ //x可以自己命名 i是索引直
+            document.write("索引值為",i,":值", x * 2, "<br>");
+        }
+    var arr = [10, 20, 30];
+    arr.forEach(doubleFunc);//foreach對陣列的每個元素執行一次指定的函式
+    </script>
+
+<h2>全域或區域?</h2>
+<script>
+    // 請註解變數是全域或區域?????	
+    var a; //全域  a=10,函室內的跑出來 a=100
+    a = 10;
+    
+    var b = 20; //全域
+    
+    c = 30;	//全域
+    
+    //test 全域
+    function test(m){  //m=33
+        let d = 40; //let宣告在函室內d=40, 到下面的d=400 
+    
+        d = 400;  //函示中使用到變數,從函室內開始找,找不到就往外找
+        a = 100;  //函示內沒有a
+        e = 50;
+        document.write( "函式內的d : ", d, "<br>");//函室內可用
+    }
+    
+    test(33);//----
+    //---以下只能找全域變數,區域的只能在區域內用
+    document.write( "a : ", a, "<br>"); //?????
+    document.write( "b : ", b, "<br>"); //?????
+    document.write( "c : ", c, "<br>"); //?????
+    // document.write( "d : ", d, "<br>"); //外面沒有d所以會壞掉
+    document.write( "e : ", e, "<br>"); //?????
+    </script>
+    
+    
+    <h2>區域, 全域危險範例</h2>
+    <script src="myLib.js"></script>
+    <script>
+    let total = 10000; //---上個月的淨總額total:10000
+    let i = 200; //---要跑的次數 i:200
+    
+    document.write( "25 + 10 = ", sum(25, 10), "<br>");	//?????
+    document.write( "total : ", total, "<br>");	//因為sum函示沒有宣告區域變數,因此誤用了全域變數的total和i
+    document.write( "i : ", i, "<br>");	//?????
+    </script> 
+    
+    <h2>rest parameters</h2>
+    <script>
+        function fn(a, b, ...ccc){//...代表把剩下的值放進一個陣列
+            document.write( "a : ", a, "<br>");
+            document.write( "b : ", b, "<br>");
+            
+            ccc.push(2222);
+            document.write( "ccc : ", ccc, "<br>");
+
+        }
+
+        fn(11,22,33,44,55);
+
+    </script>
+
+<h2>rest parameters---2</h2>
+<script>
+    function sum(...bbb){//...代表把剩下的值放進一個陣列
+        let total = 0;
+        for(let i =0; i<bbb.length; i++){
+            total +=bbb[i];
+        }
+        
+        return total;
+    }    
+    sum(21,22,33,44,55);
+        // ccc.push(2222);
+        document.write( "10+20 : ", sum(10,20), "<br>");
+        document.write( "10+20+30 : ", sum(10,20,30), "<br>");
+        document.write( "10+20+30+40 : ", sum(10,20,30,40), "<br>");
+
+</script>
+
+
+    <h2>練習</h2>
+    <div>首頁>><span id="asd">==<b>會員s中心</b>===</span></div>
+    <br><br>
+
+    搜尋<input type="text" name="ss1" value="" style=""><input type="button" value="查詢"><br>
+    搜尋<input type="text" name="ss2" value="" style=""><input type="button" value="查詢"><br>
+
+    <div>
+        <h2>js練習2</h2>
+        <ol><span>CCC</span></ol>
+        <ol><span>CCC</span></ol>
+        <ol><span>CCC</span></ol>
+        <ol><span>CCC</span></ol>
+        
+    </div>
+    <script>
+
+        var asd = document.getElementById("asd");//如果有用ID標籤才可以使用
+        asd.innerHTML = "<b>會員專區1</b>";
+        // asd.innerText = "<b>會員專區</b>";  //呈現效果不一樣
+        // console.log(asd.innerHTML);
+        // console.log(".......");
+        // console.log(asd.innerText);
+        asd.style.color="blue"; //用js寫CSS效果
+
+        //----------------------
+
+        var objs =document.getElementsByName("ss2");//集合物件
+        objs[0].value = "請輸入關鍵字";
+        //改變外觀
+        objs[0].style.borderStyle = "none";
+        
+        
+        //-----------------------
+        // document.getElementsByTagName("div")[0].style.display = "none";//找所有div中的第0個索引值,用display = none;
+        //-----------------------
+
+        var spans = document.querySelectorAll("ol span");
+        console.log(spans.length);//所有ol span的都選擇
+        console.log(spans);//span0.innerHTML = "^_^";沒有效果,要用迴圈,因為sapns是類陣列, innerHTML是單獨物件才可以使用
+        
+        for(let i = 0; i < spans.length; i++){
+        spans[i].innerHTML = "><~~"; //spans[i] 表示陣列 spans 中的第 i 個元素
+        }
+        var span0 = document.querySelector("ol span");
+        span0.innerHTML = "^_^";//只有lo span的第0個值才有變
+        
+
+    </script>
+</body>
+</html>

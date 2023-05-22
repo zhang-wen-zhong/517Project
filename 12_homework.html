@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+        }
+        .navigator {
+            display: flex;
+            padding: 0px 20px;
+            border: 1px solid #ccc;
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            z-index: 1;           
+        }
+        .nav_logo {
+            display: inline-block;
+            padding: 12px 0 0 0;
+            
+        }
+        .nav_logo img {
+            width: 100%;
+        }
+        .nav_course {
+            font-size: 0;
+        
+        }
+        .nav_course a {
+            font-size: 16px;
+            display: inline-block;
+            line-height: 52px;
+            padding: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .nav_search {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 52px;
+            width: 200px;
+            text-decoration: none;
+            color: #000 ;
+            background-color: #ccc;
+
+        }
+        .nav_group {
+            margin-left: auto;
+            padding: 0 40px;
+            
+        }
+        .nav_group img {
+            border-radius: 30px ;
+            padding: 5px;
+
+        }
+        .banner{
+            padding: 100px;
+        }
+        .banner_card {
+            margin: auto;
+            width: 960px;
+            position: relative;           
+        }
+        .banner_card_pic img {
+            border-radius: 20px;
+        }
+        .banner_card_content {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+        }
+        .banner_content_title,.banner_content_text { 
+            display: inline-block;
+        }
+        
+        .recommend {
+            
+            padding: 0px 0 60px;
+            background-color: #e8e8e8;
+        }
+        .recommend h1 {
+            text-align: center;
+            font-size: 40px;
+            padding: 40px 0 0px;
+        }
+        .recommend p {
+            text-align: center;
+        }
+        .recommend span {
+            color: aqua;
+            font-size: 22px;
+        }
+        .recommend_course {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .recommend_course_card {
+            width: 200px;
+            padding: 10px;
+        }
+        .recommend_card_pic img {
+            border-radius: 10px;
+        }
+        .recommend_card_text {
+            padding: 10px;
+        }
+        .recommend_card_text li {
+            display: inline-block;
+            position: relative;
+        }
+        .recommend_card_text li + li::before {
+            content: "/";
+            color: #02d0e3;
+            position: absolute;
+        }
+        .recommend_text_course a {
+            font-size: 14px;
+            width: 100%;
+            text-decoration: none;
+            color: #02d0e3;
+        }
+        .recommend_text_content {
+            text-decoration: none;
+            color: #000;
+        }
+
+
+
+        .new_course {
+            text-align: center;
+        }
+        
+        .new_course h3 {
+            font-size: 28px;
+            padding: 20px;
+        }
+        .new_course_category_buttons {
+            margin: 0 10px;
+        }
+        .new_course_category_buttons button {
+            font-size: 16px;
+            padding: 5px 50px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .new_course_category_buttons button:hover{
+            background-color: #ccc;
+        }
+
+        
+
+        
+        .promote {
+            text-align: center;
+            padding: 40px;
+        }
+        .promote_tibame{
+            display: inline-block;
+            background-color: rgb(70, 231, 231);
+            color: white;
+            font-size: 28px;
+            padding: 5px;
+        }
+        .promote_power{
+            display: inline-block;
+            font-size: 28px;
+            padding: 5px;
+            color: rgb(70, 231, 231);
+        }
+        .promote_content {
+            font-size: 18px;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .promote_part {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .promote_part_card {
+            width: 240px;
+        }
+        .promote_card_pic img{
+            border-radius: 10px;
+        }
+        .promote_card_text {
+            padding: 10px;
+        }
+
+        .multicultural_course {
+            background-color: #e8e8e8;
+            width: 100%
+        }
+        .multicultural_course h3 {
+            text-align: center;
+            margin: auto;
+            padding: 30px;
+            font-size: 36px;
+        }
+        .multicultural_course_text {
+            padding: 20px;
+        }
+        .multicultural_course_text p {
+            font-size: 16px;
+            text-align: center
+        }
+        .multicultural_course_text span {
+            font-size: 36px;
+            padding: 5px;
+            color: rgb(70, 231, 231);
+        }
+        .new_page{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
+        }
+        .new_page_card{
+            width: 280px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .new_card_part {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 5px solid #000;
+        }
+        .new_part_pic {
+            flex-grow: 1;
+        }
+        .new_part_text {
+            line-height: 1.5;
+            padding: 10px;
+        }
+        .new_text_location {
+            display: flex;
+            font-size: 12px;
+        }
+        .new_text_location li{
+            position: relative;
+            /* background-color: #000; */
+        }
+        .new_text_location li +li::before{
+            content: " / ";
+            position: absolute;
+            left: 0;
+            color: rgb(70, 231, 231);
+        }
+        .new_text_location li a{
+            text-decoration: none;
+            color: rgb(70, 231, 231);
+        }
+        .new_text_linux {
+            font-size: 20px;
+        }
+        .new_text_grade {
+            color: #ccc;
+            font-size: 12px;
+        }
+        .new_text_bird{
+            display: inline-block;
+            color: white;
+            background-color: orange;
+            font-size: 12px;
+            padding: 5px;
+        }
+        .new_text_deadline{
+            display: inline-block;
+            color: #ccc;
+            border: 1px solid orange;
+            font-size: 12px;
+            padding: 5px;
+        }
+        .new_text_price {
+            display: flex;
+            justify-content: space-between;
+        }
+        .new_text_price_number {
+            color: rgb(70, 231, 231);
+            font-size: 24px;
+        }
+        .new_card_human {
+            display: flex;
+            padding: 10px;
+        }
+        .new_card_human img {
+            border-radius: 20px;
+        }
+        .new_card_human p {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 40px;
+            padding: 0 10px;
+        }
+        .new_footer {
+            display: inline-block;
+            text-align: end;
+            width: 100%;
+        }
+        .new_footer a{
+            text-decoration: none;
+            display: inline-block;   
+            color: rgb(70, 231, 231);
+            padding: 10px;
+            
+        }
+
+
+
+
+        
+
+
+
+        .featured_article {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            
+        }
+        .featured_article h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        .article_part {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 400px;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        .article_part_item {
+            display: flex;
+            height: 100px;
+            box-sizing: border-box;
+            width: 400px;
+            
+        }
+        .featured_footer {
+            display: inline-block;
+            margin-left: auto;
+            width: 100%;
+        }
+
+        .online {
+            background-color: #25b2be;
+            padding: 40px 0 80px;
+        }
+
+        .online h4 {
+            font-size: 36px;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .online > p {
+            text-align: center;
+            padding: 20px 0 40px;
+            font-size: 18px;
+        }
+        .online span {
+            color: white;
+        }
+        .online_card {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .online_card_pic {
+            width: 100%;
+        }
+        .online_card_text {
+            text-align: center;
+            padding: 20px;
+        }
+        .online_card_text p {
+            font-size: 12px;
+            padding: 10px;            
+        }
+        .online_card_text a {
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .professional {
+            background-color: #ccc;
+            padding: 40px;
+        }
+        .professional h5 {
+            text-align: center;
+            font-size: 28px;
+        }
+        .professional > p {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .professional_text {
+            width: 300px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .professional_text_tag {
+            /* position: absolute; */
+        }
+
+
+        .card_number {
+            font-size: 46px;
+            padding: 0 15px;         
+        }
+        .card_text {
+            padding: 10px 0 0 0;
+        }
+        .reverse {
+            background-color: #25b2be;
+            padding: 40px;
+        }
+        .reverse p {
+            color: white;
+            text-align: center;
+            padding: 40px;
+            line-height: 1.5;
+        }
+        .reverse span {
+            font-size: 28px;
+            line-height: 2;
+        }
+        .reverse_category_buttons {
+            text-align: center;
+            padding: 20px 40px;
+        }
+        .reverse_category_buttons button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .reverse_category_buttons button:hover {
+            color: #25b2be;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="navigator">
+        <a href="#" class="nav_logo">
+            <img src="https://fakeimg.pl/80x40/200">
+        </a>
+        <div class="nav_course">
+            <a href="#">主題課程</a>
+            <a href="#">主題課程</a>
+            <a href="#">主題課程</a>
+            <a href="#">主題課程</a>
+            <a href="#">主題課程</a>
+            <a href="#">主題課程</a>
+        </div>
+        <div class="nav_group">
+            <a href="#" class="nav_search">搜尋課程</a>
+            <a href="#"><img src="https://fakeimg.pl/40x40/200"></a>
+            <a href="#"><img src="https://fakeimg.pl/40x40/200"></a>
+            <a href="#"><img src="https://fakeimg.pl/40x40/200"></a>
+        </div> 
+        
+
+
+    </section>
+    
+    <section class="banner">
+        <section class="banner_card">
+            <div class="banner_card_pic">
+                <img src="https://fakeimg.pl/960x400/200">
+            </div>
+            <div class="banner_card_content">
+                <div class="banner_content_title">免費報名</div>
+                <div class="banner_content_text">chatgpt課程</div>  
+            </div>         
+        </section>
+    </section>
+
+    <section class="recommend">
+        <h1>為你推薦</h1>
+        <p><br>Hi <span>zhang</span>，以下是推薦給你的課程</p>
+        <div class="recommend_course">
+            <div class="recommend_course_card">
+                <div class="recommend_card_pic">
+                    <img src="https://fakeimg.pl/200x120/200">
+                </div>
+                <div class="recommend_card_text">
+                    <ul>
+                        <div class="recommend_text_course">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">直播課程</a></li>
+                        </div>
+                        <li><a href="#" class="recommend_text_content"><strong>7大工作應用X3大提問技巧,召喚chatgpt成為你的職場...</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommend_course_card">
+                <div class="recommend_card_pic">
+                    <img src="https://fakeimg.pl/200x120/200">
+                </div>
+                <div class="recommend_card_text">
+                    <ul>
+                        <div class="recommend_text_course">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">直播課程</a></li>
+                        </div>
+                        <li><a href="#" class="recommend_text_content"><strong>7大工作應用X3大提問技巧,召喚chatgpt成為你的職場...</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommend_course_card">
+                <div class="recommend_card_pic">
+                    <img src="https://fakeimg.pl/200x120/200">
+                </div>
+                <div class="recommend_card_text">
+                    <ul>
+                        <div class="recommend_text_course">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">直播課程</a></li>
+                        </div>
+                        <li><a href="#" class="recommend_text_content"><strong>7大工作應用X3大提問技巧,召喚chatgpt成為你的職場...</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommend_course_card">
+                <div class="recommend_card_pic">
+                    <img src="https://fakeimg.pl/200x120/200">
+                </div>
+                <div class="recommend_card_text">
+                    <ul>
+                        <div class="recommend_text_course">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">直播課程</a></li>
+                        </div>
+                        <li><a href="#" class="recommend_text_content"><strong>7大工作應用X3大提問技巧,召喚chatgpt成為你的職場...</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommend_course_card">
+                <div class="recommend_card_pic">
+                    <img src="https://fakeimg.pl/200x120/200">
+                </div>
+                <div class="recommend_card_text">
+                    <ul>
+                        <div class="recommend_text_course">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">直播課程</a></li>
+                        </div>
+                        <li><a href="#" class="recommend_text_content"><strong>7大工作應用X3大提問技巧,召喚chatgpt成為你的職場...</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section class="promote">
+        <p class="promote_tibame">TibaMe</p>
+        <p class="promote_power"><strong>提拔我的學習力 提升職場競爭力</strong></p>
+        <p class="promote_content">知識的深度決定了你的高度，找回自己的職涯主控權<br>
+            讓TibaMe成為你的職涯教練，從自我成長、職涯規劃、職場技能到產業趨勢洞察，給你一輩子帶的走的職場能力<br>學習不設限，讓改變看得見！</p>
+        <div class="promote_part">
+            <div class="promote_part_card">
+                <div class="promote_card_pic">
+                    <img src="https://fakeimg.pl/220x140/200">
+                </div>
+                <div class="promote_card_text">
+                    <p><strong>從個人到組織</strong></p>
+                <p>從個人能力學習到企業人才培訓，精準、高效貼近使用者需求</p>
+                </div>
+            </div>
+
+            <div class="promote_part_card">
+                <div class="promote_card_pic">
+                    <img src="https://fakeimg.pl/220x140/200">
+                </div>
+                <div class="promote_card_text">
+                    <p><strong>從個人到組織</strong></p>
+                <p>從個人能力學習到企業人才培訓，精準、高效貼近使用者需求</p>
+                </div>
+            </div>
+
+            <div class="promote_part_card">
+                <div class="promote_card_pic">
+                    <img src="https://fakeimg.pl/220x140/200">
+                </div>
+                <div class="promote_card_text">
+                    <p><strong>從個人到組織</strong></p>
+                <p>從個人能力學習到企業人才培訓，精準、高效貼近使用者需求</p>
+                </div>
+            </div>
+        </div>
+            
+    </section>
+
+
+    <section class="multicultural_course">
+        <h3>多元領域主題課程</h3>
+        <div class="multicultural_course_text">
+            <p><span>3</span>大領域<span>9</span>個主題課程
+                <br>
+               <span>250+</span>位講師及業師 貼身職業培訓
+               <span>300+</span>堂 線上線下課 
+                <span>10000+</span>小時隨時在線
+            </p>
+        </div>
+        <div class="new_course">
+            <h3>最新課程</h3>
+            <div class="new_course_category_buttons">
+                <button>科技</button>
+                <button>職場</button>
+                <button>語文</button>
+            </div>
+        </div>
+
+
+        <section class="new_page">
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+        </section>
+        <section class="new_footer">
+            <a href="#"><strong>更多課程 ></strong></a>
+        </section>                      
+    </section>   
+
+    <section class="featured_course">    
+        <div class="new_course">
+            <h3>精選課程</h3>
+            <div class="new_course_category_buttons">
+                <button>科技</button>
+                <button>職場</button>
+                <button>語文</button>
+            </div>
+        </div>
+
+
+        <section class="new_page">
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+
+            <section class="new_page_card">
+                <div class="new_card_part">
+                    <div class="new_part_pic">
+                        <img src="https://fakeimg.pl/240x140/200">
+                    </div>
+                    <div class="new_part_text">
+                        <div class="new_text_location">
+                            <li><a href="#">主題課程</a></li>
+                            <li><a href="#">實體課程</a></li>
+                            <li>台北中心</li>     
+                        </div>
+                        <div class="new_text_linux"><strong>linux實戰班linux實戰班</strong></div>
+                        <div class="new_text_grade">第十一期 2023/7/7開課</div>
+                        <div class="new_text_bird">早鳥優惠</div>
+                        <div class="new_text_deadline">還剩五天五小時</div>
+                        <div class="new_text_price">
+                            <p class="new_text_price_number">NT4800</p>
+                            <p>180人瀏覽</p>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="new_card_human">
+                    <img src="https://fakeimg.pl/40x40/200">
+                    <p>X老師</p>
+                </div>
+
+                
+            </section>
+        </section>
+        <section class="new_footer">
+            <a href="#"><strong>更多課程 ></strong></a>
+        </section>                      
+    </section>  
+
+    <section class="online">
+        <h4>線上課程推薦</h4>
+        <p><span>立即點選</span> 每週線上課程影片</p>
+        <div class="online_card">
+            <div class="online_card_pic">
+                <img src="https://fakeimg.pl/600x350/200">
+            </div>
+            <div class="online_card_text">
+                <p>語文 | 商用外語</p>
+                <a href="#"><strong>英語腦進化論 | 進擊口說即戰力</strong></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="professional">
+        <h5>專業學程/就業養成 開班資訊</h5>
+        <p>短期班 | 走向專業職能應用，專業職業訓練幫助職場能力加分<br>
+        長期班 | 專為零基礎學員精心設計的課程，人才培訓立即養成</p>
+        <div class="professional_text">
+        <div class="professional_text_tag">5/8開課</div>
+        <p>就業開發 <br>微軟智慧機械工程師班(台南班)</p>
+        <p>北商 500小時</p>
+
+        </div>
+    </section>
+
+    <section class="featured_article">
+            <h1>精選文章</h1>
+            <div class="article_part">
+                <div class="article_part_item">
+                    <div class="card_number">
+                        1
+                    </div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">2</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">3</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">4</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">5</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">6</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">7</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>
+                <div class="article_part_item">
+                    <div class="card_number">8</div>
+                    <div class="card_text">
+                      <h3># 職場生涯 # 向上管理</h3>
+                      <p>OKR是甚麼?他與KPI的差別?5個重點幫助你高效成功達成目標</p>
+                    </div>
+                </div>               
+            </div>
+            <div class="featured_footer">
+                <a href="#">更多精選文章 ></a>
+            </div>
+    </section >
+    
+    <div class="reverse">
+        <p><span><strong>來 TibaMe 預約未來的自己</span>
+            <br>最實用的教育科技學習平台<br>
+            TibaMe與你翻山越嶺，探索壯闊的未來</strong></p>    
+        <div class="reverse_category_buttons">
+            <button>成為Tibame會員</button>
+            <button>企業人才培訓合作</button>
+            <button>職業訓練就業媒合</button>
+        </div>
+    </div>
+
+    
+        
+    
+    
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>var 有hoist現象(提升)</h2>
+    <script>
+        document.write("a :", a, "<br>")
+        var a = 10;
+        document.write("a :", a, "<br>")
+        // 要先寫變數再寫函數,才能計算正確,順序要對
+    </script>
+
+    <h2>var 可以重複宣告</h2>
+    <script>
+        var a = 20;
+        var a = 100;
+        var a = 4;
+        document.write("a :", a, "<br>")
+    </script>
+
+    <h2>var 沒有區塊作用域</h2>
+    <script>
+        var 
+    </script>
+    
+    <h2> let 沒有hoist現象(提升)</h2>
+    <script>
+        let aa = 100;
+        document.write("aa :", aa, "<br>")
+        // 先寫變數在函數,計算才正確        
+        
+    </script>
+        
+    <h2>let不可以重複宣告</h2>
+    <script>
+        // let bb = 3;
+        let bb = 2;           
+        document.write("bb :", bb, "<br>")       
+    </script>
+    <h2>let有區塊作用域</h2>
+    <script>
+        let message = "bye";
+        let average = 20;
+        if(average>=60){
+            let message = "pass";
+            document.write("message :", message, "<br>")
+            // 宣告在塊內,可避免污染區塊外的同名變數
+        } else{
+            let message = "goo";
+            document.write("message :", message, "<br>")
+        }
+        document.write("message :", message, "<br>")
+    </script>
+    <h2>switch句型</h2>
+        <script>
+            var low = "2";
+            //告訴程式從哪邊進入,會一直往下跑,遇到break才會停止,若case1沒有break也會是amount=3000
+            var amount;
+            
+            switch(low){
+                case "1":
+                    amount = 5000;
+                    break;
+                case "2":
+                    amount = 3000;
+                    break;
+                case "3":
+                    amount = 1000;
+                    break;
+                default:
+                    amount = 0;
+            }
+            document.write("補助款 :", amount, "<br>")
+        </script>
+        <h2>練習 印出mm當月有幾天</h2>
+        <script>
+            var mm = "3";
+            var day;
+
+            switch(mm){
+                case "1":
+                case "3":
+                case "5":
+                case "7":
+                case "8":
+                case "10":
+                case "12":
+                    day = 31;
+                    break;
+                case "2":
+                    day = 28;
+                    break;
+                
+                    day = 31;
+                    break;
+                case "4":case "6":case "9":case "11":
+                    day = 30;
+                    break;
+                       
+                    default :
+                    document.write("無效的月分<br>");
+            }
+            document.write(`${mm}月有${day}天<br>`)
+            document.write("天數 :", day, "<br>")
+            document.write("月份 :", mm, "<br>")
+        </script>
+
+        <h2>練習 印出mm當月有幾天2</h2>
+        <script>
+            let mm2 = 4;
+            let day2;
+
+            switch(mm2){    
+                case 2:
+                    day2 = 28;
+                    break;
+                case 4:case 6:case 9:case 11:
+                    day2 = 30;
+                    break;
+            }
+            if(mm2 <2 || mm2 >12){
+                    document.write(`無效的月分<br>`);
+            }else{
+                document.write(`${mm2}月又${day2}天<br>`)
+            }
+            
+        </script>
+
+        <h2>句型</h2>
+        <script>
+            // for(初始狀態; i的值; 遞增或遞減值),若遞增完的值小於第2個條件,則會一直執行
+            for(var i = 1 ; i <= 3; i++){
+                document.write("kk<br>")
+            }
+        </script>
+
+        <h2>句型ex1</h2>
+        <script>
+            for(var i = 0 ; i <= 10; i+=2){
+                document.write(i, "<br>")
+            }
+                
+        </script>
+
+        <h2>句型ex2</h2>
+        <script>       
+            for(var i = 1 ; i <= 12; i++){
+                if(i<10){ //第一個值i=1,加上i=0所以第一個值=1// i<2等於i=0,1時可以運轉
+                    document.write(i, ".")
+                }else{
+                    document.write(i, "<br>");                
+            }
+            }
+                
+        </script>
+        <h2>ex2:1~10總合為多少?</h2>
+        <script>
+            var sum = 0;
+            for( var i = 1; i<=10; i++){ //sum=0 1+0(sum)=1// 1+2=3 加上第一次的sum=1,3+1=4   //1+2+2=5,5+4=9// 
+                // document.write("sum-process:",sum, "<br>");
+                sum= sum+ i;
+            }
+            document.write("total:",sum, "<br>");
+            // 放在迴圈外,不會一直印結果   
+
+        </script>
+
+    </script>
+        <h2>ex2:1~10總合為多少?---2</h2>
+        <script>
+            var sum = 0;
+            for( var i = 1; i<=10; i++){
+                sum= sum+ i;
+                document.write("total:",sum, "<br>"); 
+            }
+            放在迴圈內,會一直印結果             
+        </script>
+
+        <h2>ex3.印出1~50之間3的倍數及其總和</h2>
+        <script>
+            var sum = 0;
+            for(var i = 1; i<=50; i++){
+                if(i%3 ===0){
+                    document.write( i, "<br>")
+                    sum += i;
+                }
+            }
+            document.write("total:",sum, "<br>"); 
+                         
+        </script>
+
+        <h2>ex3-2印出1~50之間3的倍數及其總和---2</h2>
+        <script>
+            var sum = 0;
+            for(var i = 3; i<=50; i+=3){
+                document.write( i, "<br>")
+                sum += i;
+                }            
+            document.write("total:",sum, "<br>");                          
+        </script>
+
+        <h2>for敘述的let</h2>
+            <script>
+                for(let ii = 1; ii<=9; ii++){
+                    document.write( ii, ".");
+                }
+                for敘述的let,只能在迴圈使用
+                // document.write( ii, ".");此行會error
+            </script>
+
+        <h2>for敘述的let---2</h2>
+        <script>
+            var sum = 0;
+            for(let x = 0; x<10; x++){ //for敘述的let 宣告的 x:1,2,3--->10
+                let x = 20; //區塊作用域的 x:100
+                sum += x;
+            }
+            document.write("sum:", sum, "<br>")
+        </script>
+
+        <h2>三元-----0</h2>
+        <script>
+        var avg = 77;
+        var msg;
+
+        if(avg >= 60){
+            msg = "pass";
+        } else {
+            msg = "fail";
+        }    
+        document.write( msg, "<br>");       
+        </script>
+
+        <h2>三元運算--2</h2>
+        <script>
+        var payStatus=true;
+        var msg;
+        
+        msg= payStatus === true ? "已付款" : "未付款";
+        document.write( msg, "<br>")
+        
+        </script>
+
+            
+            
+
+    
+</body>
+</html>

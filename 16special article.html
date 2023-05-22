@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .slider {
+            width: 100%;
+            /* 跟螢幕寬度一樣寬 */
+            position: relative;
+            
+        }
+        .slider .list {
+            width: 150%;
+            display: flex;
+            position: relative;
+            /* 有定位才能用上下左右設定 */
+            left: -25%;
+        }
+        .slider .item {
+            width: 33.3%;
+            /* 因為在slider裡面有三張圖片,占slider的三分之一 */
+            flex-shrink: 0;
+            box-sizing: border-box;
+            padding: 0 10px;
+
+        }
+        .slider img{
+            vertical-align: top;
+            /* 圖片上方才不會有空白處 */
+            width: 100%;
+        }
+        .slider .prev, .slider .next {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: none;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            /* 因為top50%箭頭圖標會往下掉,要讓他上去一點 */
+        }
+        .slider .prev {
+            left: 25%;
+            /* 因為螢幕寬度為100%,距離左邊25%正好使中間圖片的邊緣 */
+            margin-left: -20px;
+            /* 讓箭頭對齊 */
+        }
+        .slider .next {
+            right: 25%;
+            margin-right: -20px;
+        }
+        .slider .prev:hover,
+        .slider .next :hover{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=12">
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=16">
+            </div>
+        </div>
+        <div class="nav">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
