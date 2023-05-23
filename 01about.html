@@ -126,6 +126,213 @@
             border-top: 1px solid black;
             border-bottom: 1px solid black;
         }
+        .box p {
+            font-size: 20px;
+        }
+
+        .separate_block{
+            width: calc(100vw - 140px);
+            display: inline-block;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            text-align: center;
+            /* background-color: black; */
+            padding: 30px 0;
+            margin: 40px 0;
+
+        }
+        .separate_block_title{
+            font-size: 58px;
+            -webkit-text-stroke: 1px black;
+            color: white;
+
+        }
+        .about{
+            width: calc(100vw - 120px);
+            position: relative;
+            padding: 30px 0 100px;
+        }
+        .about_idea{
+            width: 400px;
+            position: relative;
+            display: inline-block;
+            top: 150px;
+        }
+        .about_idea_circle{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: orange;
+            margin: 70px auto;
+            box-shadow:
+            0 0 0 5px orange inset,
+            0 0 0 10px white inset; 
+        }
+        .about_title{
+            font-size: 22px;
+        }
+        .about_subtitle{
+            font-size: 36px;
+        }
+        .about_idea_line{
+            height: 90px;
+            border-right: 2px solid black;
+            position: absolute;
+            right: 50%;
+            top: 270px;
+        }
+        .about_idea_text{
+            width: 200px;
+            padding: 20px;
+            margin: auto;
+            border: 2px solid black;
+        }
+        .about_page{
+            display: inline-block;
+            width: calc((100vw -120px ) -400px);
+            /* border: 3px solid green; */
+        }
+        .about_contact{
+            display: inline-block;
+            display: flex;
+            position: relative;
+
+        }
+        .about_contact_circle{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: orange;
+            margin:  0 90px 20px 0;
+            box-shadow:
+            0 0 0 5px orange inset,
+            0 0 0 10px white inset;
+        }
+        .about_contact_line{
+            width: 90px;
+            border: 2px solid black;
+            position: absolute;
+            right: 48%;
+            top: 50%;
+
+        }
+        .about_contact_text{
+            width: 200px;
+            padding: 20px;
+            margin: auto;
+            border: 2px solid black;
+        }
+        .about_join{
+            display: inline-block;
+            display: flex;
+            position: relative; 
+        }
+        .about_join_circle{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: orange;
+            margin:  40px 100px 10px 40px;
+            box-shadow:
+            0 0 0 5px orange inset,
+            0 0 0 10px white inset;
+        }
+        .about_join_line{
+            width: 90px;
+            border: 2px solid black;
+            position: absolute;
+            right: 45%;
+            top: 50%;
+        }
+        .about_join_text{
+            width: 200px;
+            padding: 20px;
+            display: inline-block;
+            /* text-align: center; */
+            margin:  auto;
+            border: 2px solid black;
+        }
+        .about_logo{
+            position: absolute;
+            top: 250px;
+            left: 280px;
+            z-index: -1;
+            animation: rotateAnimation 10s infinite linear;
+        }
+        @keyframes rotateAnimation {
+        from {
+        transform: rotate(0deg);
+        }
+        to {
+        transform: rotate(360deg);
+        }
+        }
+        .about_logo img{
+            width: 100%;
+        }
+        .footer {
+            width: calc(100vw - 140px);
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 100px 20px 100px;
+            box-sizing: border-box;
+            position: relative;
+            bottom: 0;
+        }
+        .footer_copyright {
+            font-size: 16px;
+        }
+        .footer_contact {
+            display: flex;
+        }
+        .footer_contact li{
+            position: relative;
+            padding: 0px 8px;
+            list-style: none;
+        }
+        .footer_contact li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .footer_contact li + li::before {
+            content: '/';
+            color: #000;
+            position: absolute;
+            left: 0;
+        }
+        .address{
+            width: calc(100vw -120px);
+            display: flex;
+        }
+        .address p{
+            font-size: 16px;
+        }
+        .address_title{
+            width: 400px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .address_content{}
+        .address_content_detail{
+            padding: 0 0 20px;
+        }
+        .address span {
+            color: blue;
+        }
+        
         
 
     </style>
@@ -156,11 +363,99 @@
     <section class="banner">
         <img src="theoneoff-material\about_us\about_banner.png" alt="">
     </section>
-    <div class="box">
-        <div class="box_one">設計理念</div>
-        <div class="box_two">聯絡我們</div>
-        <div class="box_three">加入我們</div>
-    </div>
+    <section class="box">
+        <div class="box_one"><p>設計理念</p></div>
+        <div class="box_two"><p>聯絡我們</p></div>
+        <div class="box_three"><p>加入我們</p></div>
+    </section>
+    <section class="separate_block">
+        <div class="separate_block_title">JEFFERY STYLE</div>
+    </section>
+    <section class="about">
+        <div class="about_idea">
+            <div class="about_idea_circle">
+                <p class="about_title">設計理念</p>
+                <p class="about_subtitle">concept</p>
+            </div>
+            <div class="about_idea_line"></div>
+            <div class="about_idea_text">我們堅持一對一<br>
+                教學我們滿足各種需求建構<br>
+                應變各種狀況的學習環境</div>
+        </div>
+        <div class="about_page">
+            <div class="about_contact">
+                <div class="about_contact_circle">
+                    <p class="about_title">關於我們</p>
+                    <p class="about_subtitle">about us</p>
+                </div>
+                <div class="about_contact_line"></div>
+                <div class="about_contact_text">我們堅持一對一<br>
+                    教學我們滿足各種需求建構<br>
+                    應變各種狀況的學習環境</div>
+            </div>
+            <div class="about_join">
+                <div class="about_join_circle">
+                    <p class="about_title">加入我們</p>
+                    <p class="about_subtitle">join us</p>
+                </div>
+                <div class="about_join_line"></div>
+                <div class="about_join_text">我們堅持一對一<br>教學我們滿足各種需求建構<br>應變各種狀況的學習環境</div>   
+            </div>
+        </div>
+        <div class="about_logo"><img src="theoneoff-material\top\LOGO.png" alt=""></div>
+    </section>   
+    <section class="separate_block">
+        <div class="separate_block_title">WE ARE HERE !</div>
+    </section>
+    <section class="address">
+        <div class="address_title"><p>分店</p>
+        </div>
+        <div class="address_content">
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            <div class="address_content_detail">
+                <span>THE.ONEOFF.COSTOM STUDIO</span>
+                <p>桃園市民生路105號3樓</p>
+                <p>電話 : 099-999-9999</p>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section class="footer">
+        <div class="footer_copyright">
+            <p>2023@jeffery</p>
+        </div>
+        <ul class="footer_contact">
+            <li><a href="#">LINE</a></li>
+            <li><a href="#">INSTRAGRAM</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+        </ul>
+    </section>
     
 </body>
 </html>
