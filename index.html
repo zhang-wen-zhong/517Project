@@ -25,7 +25,6 @@
             background-color: white;
             box-sizing: border-box;
             padding: 20px 40px;
-            /* border: 3px solid blue; */
             z-index: 2;
             text-align: center;
         }
@@ -48,7 +47,6 @@
             vertical-align: bottom;           
         } 
         .horizontal {
-            /* border: 3px solid blue; */
             width: 120px;
             display: inline-block;
             position: fixed;
@@ -99,7 +97,6 @@
         background-image: url("theoneoff-material/top/banner2.png");
         }
         .text {
-            /* border: 2px solid blue; */
             padding: 20px 0 150px;
         } 
         .text .text_design {
@@ -113,8 +110,7 @@
             font-size: 48px;
             text-decoration: none;
             color: #000;
-            font-weight: bolder;
-            
+            font-weight: bolder;   
         }
         .text_content {
             display: inline-block;
@@ -232,7 +228,6 @@
             width: calc((100vw - 120px -200px)/2);
         } /*  右上角文字共用 */
         .hairstyle_case_english{
-            /* text-align: end; */
             position: absolute;
             top: 0;
             right: 80px;
@@ -240,7 +235,6 @@
             color: #afaeae;
         } /*  右上角文字共用 */
         .hairstyle_case_chinese {
-            /* text-align: end; */
             position: absolute;
             top: 30px;
             right: 60px;
@@ -257,17 +251,10 @@
         .hairstyle_second {
             width: calc(100vw - 120px);
             display: flex;
-            /* justify-content: space-around; */
             padding: 80px 0 150px;
-            /* box-sizing: border-box; */
             position: relative;
             overflow: hidden;
-            /* 跑馬燈才不會跑出容器 */
-            /* border: 3px solid blue; */
 
-        }
-        .hairstyle_second_name {
-            /* width: calc((100vw - 120px -200px)/2); */
         }
         .hairstyle_second_english {
             font-size: 26px;
@@ -281,7 +268,6 @@
             height: 350px; 
             border-radius: 20px;
         }
-        
         .hairstyle_second_heading {
             width: calc((100vw - 120px -200px)/2);
         }
@@ -343,7 +329,6 @@
             font-size: 18px;
             line-height: 1.5;
         }
-
         .latestnews {
             width: calc(100vw - 120px);
             display: flex;
@@ -351,24 +336,16 @@
             padding: 80px 0 150px;
             position: relative;
             overflow: hidden;
-            /* 跑馬燈才不會跑出容器 */
-            /* border: 3px solid blue; */
-
         }
         .latestnews_word {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* width: calc((100vw - 120px -500px)/2); */
         }
         .latestnews_caption {
             font-size: 26px;
             line-height: 1.2;
-            width: 300px;
-            /* margin: auto; */
-            /* padding: 100px 70px 0 40px; */
-            /* border: 10px solid yellow; */
-            
+            width: 300px;           
         }
         .latestnews_content {
             font-size: 16px;
@@ -408,7 +385,6 @@
             border-radius: 20px;          
         }  
         .latestnews_tag_english{
-            /* text-align: end; */
             position: absolute;
             top: 0;
             right: 80px;
@@ -416,7 +392,6 @@
             color: #afaeae;
         }
         .latestnews_tag_chinese {
-            /* text-align: end; */
             position: absolute;
             top: 30px;
             right: 60px;
@@ -427,14 +402,9 @@
         .outfits {
             width: calc(100vw - 120px);
             display: flex;
-            /* justify-content: space-around; */
             padding: 80px 0 100px;
-            /* box-sizing: border-box; */
             position: relative;
             overflow: hidden;
-            /* 跑馬燈才不會跑出容器 */
-            /* border: 3px solid blue; */
-
         }
         .outfits_word{
             width: 450px;
@@ -473,7 +443,6 @@
             border-radius: 20px;        
         }
         .outfits_tag_english{
-            /* text-align: end; */
             position: absolute;
             top: 0;
             right: 80px;
@@ -481,7 +450,6 @@
             color: #afaeae;
         }
         .outfits_tag_chinese {
-            /* text-align: end; */
             position: absolute;
             top: 30px;
             right: 60px;
@@ -502,10 +470,9 @@
     </style>
 </head>
 <body>
-    
         <section class="logobar">
             <div class="logobar_item_wire"></div>
-            <a href="01top.html"><img src="theoneoff-material\top\LOGO.png" alt=""></a>
+            <a href="index.html"><img src="theoneoff-material\top\LOGO.png" alt=""></a>
             <div class="logobar_item_wire"></div>
     
         </section>
@@ -533,12 +500,12 @@
             <div class="text_content">
                 <p>髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
             </div>
-            <div class="text_btn">
+            <a href="01reserve.html" class="text_btn">
                 <button class="text_btn_reserve">
                     <div class="text_btn_reserve_english"><p>RESERVE</p></div>
                     <div class="text_btn_reserve_chinese"><p>預約諮詢</p></div>
                 </button>
-            </div>
+            </a>
         </div>
         <div class="footer">
             <div class="footer_copyright">
@@ -555,7 +522,7 @@
                 <p class="hairstyle_first_english">AFRO DREADLOCKS</p> 
                 <p class="hairstyle_first_chinese">全真髮髒辨</p>
             </div>
-            <a href="#" class="hairstyle_first_pic"><img src="theoneoff-material\top\design3.png" alt=""></a>
+            <a href="01workscase.html" class="hairstyle_first_pic"><img src="theoneoff-material\top\design3.png" alt=""></a>
             <p class="hairstyle_case_english">Works Case</p>
             <p class="hairstyle_case_chinese">作品案例</p>
             <div class="hairstyle_first_heading">
@@ -573,7 +540,7 @@
                 <p class="hairstyle_second_english">EASY PERM</p> 
                 <p class="hairstyle_second_chinese">日系俐落型男</p>
             </div>
-            <a href="#" class="hairstyle_second_pic"><img src="theoneoff-material\top\easyperm.png" alt=""></a>
+            <a href="01workscase.html" class="hairstyle_second_pic"><img src="theoneoff-material\top\easyperm.png" alt=""></a>
             <p class="hairstyle_case_english">Works Case</p>
             <p class="hairstyle_case_chinese">作品案例</p>
             
@@ -582,7 +549,7 @@
             </div>        
         </section>
         <section class="hairstyle_third">
-            <a href="#" class="hairstyle_third_pic"><img src="theoneoff-material\top\japanwet.png" alt=""></a>
+            <a href="01workscase.html" class="hairstyle_third_pic"><img src="theoneoff-material\top\japanwet.png" alt=""></a>
             <div class="hairstyl_thirde_heading">
                 <p class="hairstyle_third_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
             </div>
@@ -602,8 +569,8 @@
                 <p class="latestnews_caption">精心於每一段髮絲，你的魅力由我來領引！</p> 
                 <p class="latestnews_content">精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！</p>
             </div>
-            <a href="#" class="latestnews_pic_first"><img src="theoneoff-material\top\new1.png" alt=""></a>
-            <a href="#" class="latestnews_pic_second"><img src="theoneoff-material\top\new2.png" alt=""></a>
+            <a href="01introduce.html" class="latestnews_pic_first"><img src="theoneoff-material\top\new1.png" alt=""></a>
+            <a href="01introduce.html" class="latestnews_pic_second"><img src="theoneoff-material\top\new2.png" alt=""></a>
             <div class="latestnews_word">
                 <p class="latestnews_caption">精心於每一段髮絲，你的魅力由我來領引！</p> 
                 <p class="latestnews_content">精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！精心於每一段髮絲，你的魅力由我來領引！</p>
@@ -622,7 +589,7 @@
             <div class="outfits_heading">
                 <p class="outfits_heading_content">髒辮是非常自由的髮型，自然凌亂或乾淨整齊，加粗加長加上一些亮麗的顏色都可以，甚至每一根髒辮的均勻度、毛躁程度都是可以控制的。</p>
             </div>
-        <a href="#" class="outfits_pic"><img src="theoneoff-material\top\top_outfit.png" alt=""></a>
+        <a href="01outfits.html" class="outfits_pic"><img src="theoneoff-material\top\top_outfit.png" alt=""></a>
         <p class="outfits_tag_english">Works Case</p>
         <p class="outfits_tag_chinese">作品案例</p>
         
